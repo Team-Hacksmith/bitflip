@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqyk3v8ow2w4b"]
+
+[ext_resource type="Texture2D" uid="uid://d0juk4oil3a0b" path="res://assets/free-exclusion-zone-tileset-pixel-art/2 Background/Day/1.png" id="1_6177f"]
+[ext_resource type="Texture2D" uid="uid://dhy0xcjvgvfil" path="res://assets/free-exclusion-zone-tileset-pixel-art/2 Background/Day/2.png" id="2_j8cj7"]
+[ext_resource type="Texture2D" uid="uid://dputoaewtxduu" path="res://assets/free-exclusion-zone-tileset-pixel-art/2 Background/Day/3.png" id="3_rb8cv"]
+[ext_resource type="Texture2D" uid="uid://dcuvc7rmdq3cc" path="res://assets/free-exclusion-zone-tileset-pixel-art/2 Background/Day/4.png" id="4_1enb5"]
+[ext_resource type="Texture2D" uid="uid://bfkt1xma05bmv" path="res://assets/free-exclusion-zone-tileset-pixel-art/2 Background/Day/5.png" id="5_7lpua"]
+
+[node name="DayParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+
+[node name="1" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("1_6177f")
+offset = Vector2(288, 162)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(576, 0)
+
+[node name="2" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("2_j8cj7")
+offset = Vector2(288, 162)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.25, 0)
+motion_mirroring = Vector2(576, 0)
+
+[node name="3" type="Sprite2D" parent="ParallaxLayer3"]
+texture = ExtResource("3_rb8cv")
+offset = Vector2(288, 162)
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(576, 0)
+
+[node name="4" type="Sprite2D" parent="ParallaxLayer4"]
+texture = ExtResource("4_1enb5")
+offset = Vector2(288, 162)
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.75, 0)
+motion_mirroring = Vector2(576, 0)
+
+[node name="5" type="Sprite2D" parent="ParallaxLayer5"]
+texture = ExtResource("5_7lpua")
+offset = Vector2(288, 162)
