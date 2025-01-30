@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://baqa2j6l2ouj4"]
+[gd_scene load_steps=14 format=4 uid="uid://baqa2j6l2ouj4"]
 
 [ext_resource type="TileSet" uid="uid://gdv2kxy7dufs" path="res://resources/ground.tres" id="1_wwida"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="2_m2y66"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bdqbhwawevyea" path="res://assets/Power-Station-Free-Tileset-Pixel-Art/3 Objects/3 Power lines/2.png" id="4_3xafw"]
 [ext_resource type="Texture2D" uid="uid://duu4jb5yckyu3" path="res://assets/Power-Station-Free-Tileset-Pixel-Art/3 Objects/3 Power lines/1.png" id="5_f1jyk"]
 [ext_resource type="Texture2D" uid="uid://8cc6p4fihdwl" path="res://assets/Power-Station-Free-Tileset-Pixel-Art/4 Animated objects/Trap.png" id="7_tyyoa"]
+[ext_resource type="SpriteFrames" uid="uid://chkmsedr3os2m" path="res://resources/cat_sprite_frames.tres" id="8_41hhs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i6ytb"]
 atlas = ExtResource("7_tyyoa")
@@ -68,7 +69,7 @@ position = Vector2(802, 292)
 rotation = 1.57079
 sprite_frames = SubResource("SpriteFrames_f7ono")
 autoplay = "default"
-frame_progress = 0.316577
+frame_progress = 0.161275
 centered = false
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="props"]
@@ -76,7 +77,7 @@ position = Vector2(1027, 324)
 rotation = -1.57079
 sprite_frames = SubResource("SpriteFrames_f7ono")
 autoplay = "default"
-frame_progress = 0.838437
+frame_progress = 0.683135
 centered = false
 
 [node name="GroundLayer" type="TileMapLayer" parent="."]
@@ -98,3 +99,17 @@ tile_set = ExtResource("1_wwida")
 position = Vector2(240, 162)
 
 [node name="NightParallaxBackground" parent="." instance=ExtResource("3_2e5rv")]
+
+[node name="Cat" type="AnimatedSprite2D" parent="."]
+position = Vector2(141, 170)
+sprite_frames = ExtResource("8_41hhs")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.553276
+
+[node name="Cat2" type="AnimatedSprite2D" parent="."]
+position = Vector2(293, 170)
+sprite_frames = ExtResource("8_41hhs")
+animation = &"sleep"
+autoplay = "sleep"
+frame_progress = 0.756588
