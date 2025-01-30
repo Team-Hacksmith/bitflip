@@ -46,20 +46,38 @@ animations = [{
 
 [node name="Main" type="Node2D"]
 
-[node name="2" type="Sprite2D" parent="."]
+[node name="props" type="Node2D" parent="."]
+
+[node name="2" type="Sprite2D" parent="props"]
 position = Vector2(320, 122)
 texture = ExtResource("4_3xafw")
 centered = false
 
-[node name="1" type="Sprite2D" parent="."]
+[node name="1" type="Sprite2D" parent="props"]
 position = Vector2(321, 83)
 texture = ExtResource("5_f1jyk")
 centered = false
 
-[node name="4" type="Sprite2D" parent="."]
+[node name="4" type="Sprite2D" parent="props"]
 position = Vector2(785, 212)
 rotation = 0.785397
 texture = ExtResource("3_8m150")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="props"]
+position = Vector2(802, 292)
+rotation = 1.57079
+sprite_frames = SubResource("SpriteFrames_f7ono")
+autoplay = "default"
+frame_progress = 0.316577
+centered = false
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="props"]
+position = Vector2(1027, 324)
+rotation = -1.57079
+sprite_frames = SubResource("SpriteFrames_f7ono")
+autoplay = "default"
+frame_progress = 0.838437
+centered = false
 
 [node name="GroundLayer" type="TileMapLayer" parent="."]
 position = Vector2(51, 186)
@@ -80,19 +98,3 @@ tile_set = ExtResource("1_wwida")
 position = Vector2(240, 162)
 
 [node name="NightParallaxBackground" parent="." instance=ExtResource("3_2e5rv")]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(802, 292)
-rotation = 1.57079
-sprite_frames = SubResource("SpriteFrames_f7ono")
-autoplay = "default"
-frame_progress = 0.655957
-centered = false
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(1027, 324)
-rotation = -1.57079
-sprite_frames = SubResource("SpriteFrames_f7ono")
-autoplay = "default"
-frame_progress = 0.177817
-centered = false
