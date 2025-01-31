@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var auto_move_timer: Timer = $AutoMoveTimer
+@onready var transportation_particles: CPUParticles2D = $TransportationParticles
 
 @export var auto_move_time := 30.0 #seconds
 @export var speed := 250
@@ -53,8 +54,15 @@ func _physics_process(_delta: float) -> void:
 	
 
 func move_to_next_marker():
+	if is_at_last or not is_fleeing:
+		return
+	transportation_particles.emitting = true
 	auto_move_timer.stop()
-	if current_index < len(position_markers) - 1 and is_fleeing:
+	sprite.hide()
+	
+	await transportation_particles.finished
+	sprite.show()
+	if current_index < len(position_markers) - 1:
 		is_fleeing = false
 		current_index += 1
 		global_position = position_markers[current_index]
