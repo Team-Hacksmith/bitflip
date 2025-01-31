@@ -15,6 +15,7 @@ var position_markers: Array[Vector2] = []
 
 var wall_walking := false
 var is_fleeing := false
+var is_at_last := false
 var current_index = 0
 
 func _ready() -> void:
@@ -24,6 +25,9 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	velocity += gravity * gravity_dir
+	
+	if is_at_last:
+		is_fleeing = false
 	
 	wall_walking = is_on_wall()
 		
@@ -50,10 +54,13 @@ func _physics_process(_delta: float) -> void:
 
 func move_to_next_marker():
 	auto_move_timer.stop()
-	if len(position_markers) - 1 > current_index and is_fleeing:
+	if current_index < len(position_markers) - 1 and is_fleeing:
 		is_fleeing = false
 		current_index += 1
 		global_position = position_markers[current_index]
+	if current_index == len(position_markers) - 1:
+		is_at_last = true
+		is_fleeing = false
 	
 
 func _on_spook_area_body_entered(body: Node2D) -> void:
