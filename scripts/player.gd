@@ -11,8 +11,8 @@ extends CharacterBody2D
 @onready var jump_buffer_timer = $JumpBufferTimer
 @onready var jump_height_timer = $JumpHeightTimer
 @onready var antennae: Node2D = $Antennae
-@onready var antenna_target1: Marker2D = $Antennae/AntennaTarget1
-@onready var antenna_target2: Marker2D = $Antennae/AntennaTarget2
+@onready var antenna_target1: Marker2D = $Sprite2D/Antennae/AntennaTarget1
+@onready var antenna_target2: Marker2D = $Sprite2D/Antennae/AntennaTarget2
 
 var can_coyote_jump = false
 var jump_buffered = false

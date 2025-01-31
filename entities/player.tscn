@@ -102,21 +102,25 @@ position = Vector2(0, -10)
 rotation = -1.57079
 shape = SubResource("CapsuleShape2D_vc2im")
 
-[node name="Antennae" type="Node2D" parent="."]
-position = Vector2(-13, -11)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -15)
+texture = ExtResource("2_8fetl")
 
-[node name="AntennaTarget1" type="Marker2D" parent="Antennae"]
+[node name="Antennae" type="Node2D" parent="Sprite2D"]
+position = Vector2(-13, 3.11653)
+
+[node name="AntennaTarget1" type="Marker2D" parent="Sprite2D/Antennae"]
 position = Vector2(0, -21)
 gizmo_extents = 5.0
 
-[node name="AntennaTarget2" type="Marker2D" parent="Antennae"]
+[node name="AntennaTarget2" type="Marker2D" parent="Sprite2D/Antennae"]
 position = Vector2(2, -24)
 gizmo_extents = 5.0
 
-[node name="Antenna1" type="Skeleton2D" parent="Antennae"]
+[node name="Antenna1" type="Skeleton2D" parent="Sprite2D/Antennae"]
 modification_stack = SubResource("SkeletonModificationStack2D_2pr5p")
 
-[node name="0" type="Bone2D" parent="Antennae/Antenna1"]
+[node name="0" type="Bone2D" parent="Sprite2D/Antennae/Antenna1"]
 rotation = -2.00399
 scale = Vector2(0.999976, 0.999976)
 rest = Transform2D(-4.37114e-08, -1, 1, -4.37114e-08, -14, -10)
@@ -125,7 +129,7 @@ length = 4.0
 bone_angle = 0.0
 metadata/_local_pose_override_enabled_ = true
 
-[node name="Line0" type="Line2D" parent="Antennae/Antenna1/0"]
+[node name="Line0" type="Line2D" parent="Sprite2D/Antennae/Antenna1/0"]
 points = PackedVector2Array(0, 0, 4, 9.53674e-07)
 width = 1.0
 default_color = Color(0.129412, 0.129412, 0.137255, 1)
@@ -134,7 +138,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
 
-[node name="1" type="Bone2D" parent="Antennae/Antenna1/0"]
+[node name="1" type="Bone2D" parent="Sprite2D/Antennae/Antenna1/0"]
 position = Vector2(4, 9.53674e-07)
 rest = Transform2D(1, 0, 0, 1, 4, 9.53674e-07)
 auto_calculate_length_and_angle = false
@@ -142,7 +146,7 @@ length = 4.0
 bone_angle = 0.0
 metadata/_local_pose_override_enabled_ = true
 
-[node name="Line1" type="Line2D" parent="Antennae/Antenna1/0/1"]
+[node name="Line1" type="Line2D" parent="Sprite2D/Antennae/Antenna1/0/1"]
 position = Vector2(0, -7.78829e-07)
 points = PackedVector2Array(0, 0, 4, 9.53674e-07)
 width = 1.0
@@ -152,7 +156,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
 
-[node name="2" type="Bone2D" parent="Antennae/Antenna1/0/1"]
+[node name="2" type="Bone2D" parent="Sprite2D/Antennae/Antenna1/0/1"]
 position = Vector2(4, -7.78829e-07)
 rest = Transform2D(1, 0, 0, 1, 4, -7.78829e-07)
 auto_calculate_length_and_angle = false
@@ -160,7 +164,7 @@ length = 4.0
 bone_angle = 0.0
 metadata/_local_pose_override_enabled_ = true
 
-[node name="Line2" type="Line2D" parent="Antennae/Antenna1/0/1/2"]
+[node name="Line2" type="Line2D" parent="Sprite2D/Antennae/Antenna1/0/1/2"]
 position = Vector2(0, 1.74845e-07)
 points = PackedVector2Array(0, 0, 4, 9.53674e-07)
 width = 1.0
@@ -170,7 +174,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
 
-[node name="3" type="Bone2D" parent="Antennae/Antenna1/0/1/2"]
+[node name="3" type="Bone2D" parent="Sprite2D/Antennae/Antenna1/0/1/2"]
 position = Vector2(4, 1.74846e-07)
 rest = Transform2D(1, 0, 0, 1, 4, 1.74846e-07)
 auto_calculate_length_and_angle = false
@@ -178,7 +182,7 @@ length = 4.0
 bone_angle = 0.0
 metadata/_local_pose_override_enabled_ = true
 
-[node name="Line3" type="Line2D" parent="Antennae/Antenna1/0/1/2/3"]
+[node name="Line3" type="Line2D" parent="Sprite2D/Antennae/Antenna1/0/1/2/3"]
 position = Vector2(0, 1.74846e-07)
 points = PackedVector2Array(0, 0, 4, 9.53674e-07)
 width = 1.0
@@ -188,11 +192,11 @@ begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
 
-[node name="Antenna2" type="Skeleton2D" parent="Antennae"]
+[node name="Antenna2" type="Skeleton2D" parent="Sprite2D/Antennae"]
 position = Vector2(2, 0)
 modification_stack = SubResource("SkeletonModificationStack2D_18qs8")
 
-[node name="0" type="Bone2D" parent="Antennae/Antenna2"]
+[node name="0" type="Bone2D" parent="Sprite2D/Antennae/Antenna2"]
 rotation = -1.5708
 scale = Vector2(0.999971, 0.999971)
 rest = Transform2D(-4.37114e-08, -1, 1, -4.37114e-08, -14, -10)
@@ -201,7 +205,7 @@ length = 4.0
 bone_angle = 0.0
 metadata/_local_pose_override_enabled_ = true
 
-[node name="Line0" type="Line2D" parent="Antennae/Antenna2/0"]
+[node name="Line0" type="Line2D" parent="Sprite2D/Antennae/Antenna2/0"]
 points = PackedVector2Array(0, 0, 4, 9.53674e-07)
 width = 1.0
 default_color = Color(0.129412, 0.129412, 0.137255, 1)
@@ -210,7 +214,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
 
-[node name="1" type="Bone2D" parent="Antennae/Antenna2/0"]
+[node name="1" type="Bone2D" parent="Sprite2D/Antennae/Antenna2/0"]
 position = Vector2(4.00004, -8.4877e-05)
 scale = Vector2(0.999995, 0.999995)
 rest = Transform2D(1, 0, 0, 1, 4, 9.53674e-07)
@@ -219,7 +223,7 @@ length = 4.0
 bone_angle = 0.0
 metadata/_local_pose_override_enabled_ = true
 
-[node name="Line1" type="Line2D" parent="Antennae/Antenna2/0/1"]
+[node name="Line1" type="Line2D" parent="Sprite2D/Antennae/Antenna2/0/1"]
 position = Vector2(0, -7.78829e-07)
 points = PackedVector2Array(0, 0, 4, 9.53674e-07)
 width = 1.0
@@ -229,7 +233,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
 
-[node name="2" type="Bone2D" parent="Antennae/Antenna2/0/1"]
+[node name="2" type="Bone2D" parent="Sprite2D/Antennae/Antenna2/0/1"]
 position = Vector2(3.99974, -0.000131607)
 rotation = 1.01328e-05
 scale = Vector2(0.999994, 0.999994)
@@ -239,7 +243,7 @@ length = 4.0
 bone_angle = 0.0
 metadata/_local_pose_override_enabled_ = true
 
-[node name="Line2" type="Line2D" parent="Antennae/Antenna2/0/1/2"]
+[node name="Line2" type="Line2D" parent="Sprite2D/Antennae/Antenna2/0/1/2"]
 position = Vector2(0, 1.74845e-07)
 points = PackedVector2Array(0, 0, 4, 9.53674e-07)
 width = 1.0
@@ -249,7 +253,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
 
-[node name="3" type="Bone2D" parent="Antennae/Antenna2/0/1/2"]
+[node name="3" type="Bone2D" parent="Sprite2D/Antennae/Antenna2/0/1/2"]
 position = Vector2(3.99997, -4.3869e-05)
 scale = Vector2(0.999548, 0.999548)
 rest = Transform2D(1, 0, 0, 1, 4, 1.74846e-07)
@@ -258,7 +262,7 @@ length = 4.0
 bone_angle = 0.0
 metadata/_local_pose_override_enabled_ = true
 
-[node name="Line3" type="Line2D" parent="Antennae/Antenna2/0/1/2/3"]
+[node name="Line3" type="Line2D" parent="Sprite2D/Antennae/Antenna2/0/1/2/3"]
 position = Vector2(0, 1.74846e-07)
 points = PackedVector2Array(0, 0, 4, 9.53674e-07)
 width = 1.0
@@ -268,7 +272,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
 
-[node name="4" type="Bone2D" parent="Antennae/Antenna2/0/1/2/3"]
+[node name="4" type="Bone2D" parent="Sprite2D/Antennae/Antenna2/0/1/2/3"]
 position = Vector2(4.00231, 5.31177e-05)
 rotation = -0.000475407
 scale = Vector2(1, 1)
@@ -278,7 +282,7 @@ length = 4.0
 bone_angle = 0.0
 metadata/_local_pose_override_enabled_ = true
 
-[node name="Line3" type="Line2D" parent="Antennae/Antenna2/0/1/2/3/4"]
+[node name="Line3" type="Line2D" parent="Sprite2D/Antennae/Antenna2/0/1/2/3/4"]
 position = Vector2(0, 1.74846e-07)
 points = PackedVector2Array(0, 0, 4, 9.53674e-07)
 width = 1.0
@@ -287,10 +291,6 @@ joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -15)
-texture = ExtResource("2_8fetl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -28)
