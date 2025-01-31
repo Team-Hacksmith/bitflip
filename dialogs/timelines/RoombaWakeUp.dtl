@@ -1,0 +1,7 @@
+[background fade="0.0"]
+*Slurp* *Slurp*
+join Cat (idle_lick) leftmost
+Cat: *Purr* *Slurpp*
+Cat (idle_itch): *Purrr*
+[end_timeline]
+[wait time="1.0"]

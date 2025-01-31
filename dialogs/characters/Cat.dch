@@ -1,0 +1,74 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "BasicPixelVN"
+},
+"default_portrait": "idle",
+"description": "",
+"display_name": "Cat",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"idle": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://dialogs/characters/portraits/cat_portrait.tscn"
+},
+"idle_itch": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://dialogs/characters/portraits/cat_portrait.tscn"
+},
+"idle_lick": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://dialogs/characters/portraits/cat_portrait.tscn"
+},
+"idle_side": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://dialogs/characters/portraits/cat_portrait.tscn"
+},
+"sleep": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://dialogs/characters/portraits/cat_portrait.tscn"
+},
+"walk": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://dialogs/characters/portraits/cat_portrait.tscn"
+}
+},
+"scale": 1.0
+}

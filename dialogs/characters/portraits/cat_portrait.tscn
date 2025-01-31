@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b13gab76psw3o"]
+
+[ext_resource type="Script" path="res://dialogs/characters/portraits/animated_sprite_portrait.gd" id="1_u7a0r"]
+[ext_resource type="SpriteFrames" uid="uid://chkmsedr3os2m" path="res://resources/cat_sprite_frames.tres" id="2_5j8vh"]
+
+[node name="CatPortrait" type="Marker2D"]
+script = ExtResource("1_u7a0r")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = ExtResource("2_5j8vh")
+animation = &"idle"
+frame_progress = 0.168984

@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://baqa2j6l2ouj4"]
+[gd_scene load_steps=15 format=4 uid="uid://baqa2j6l2ouj4"]
 
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_pdm61"]
 [ext_resource type="TileSet" uid="uid://gdv2kxy7dufs" path="res://resources/ground.tres" id="1_wwida"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="2_m2y66"]
 [ext_resource type="PackedScene" uid="uid://bal5enltwdq06" path="res://entities/night_parallax_background.tscn" id="3_2e5rv"]
@@ -46,6 +47,7 @@ animations = [{
 }]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_pdm61")
 
 [node name="props" type="Node2D" parent="."]
 
