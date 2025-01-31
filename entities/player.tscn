@@ -407,8 +407,9 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_wvd2u")
-speed = 100
-gravity = 10
+speed = 200
+gravity = 20
+jump_force = 400
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var speed = 300
-@export var gravity = 30
+@export var speed = 100
+@export var gravity = 10
 @export var jump_force = 300
 
 @onready var ap = $AnimationPlayer
@@ -17,18 +17,43 @@ var is_crouching = false
 var stuck_under_object = false
 var can_coyote_jump = false
 var jump_buffered = false
+var is_disabled = false
 
 func _physics_process(delta):
+	# Disabling player movement when dialogic timeline is active
+	is_disabled = Dialogic.current_timeline != null
+	
 	if !is_on_floor() && (can_coyote_jump == false):
 		velocity.y += gravity
 		if velocity.y > 1000:
 			velocity.y = 1000
 	
+	var horizontal_direction = Input.get_axis("move_left", "move_right")
+	handle_inputs(horizontal_direction)
+	
+	var was_on_floor = is_on_floor()
+	move_and_slide()
+	
+	# Started to fall
+	if was_on_floor && !is_on_floor() && velocity.y >= 0:
+		can_coyote_jump = true
+		coyote_timer.start()
+	
+	# Touched ground
+	if !was_on_floor && is_on_floor():
+		if jump_buffered:
+			jump_buffered = false
+			print("Buffered jump")
+			jump()
+	
+	update_animations(horizontal_direction)
+	
+func handle_inputs(horizontal_direction: float):
+	if is_disabled: return
 	if Input.is_action_just_pressed("jump"):
 		jump_height_timer.start()
 		jump()
 	
-	var horizontal_direction = Input.get_axis("move_left", "move_right")
 	velocity.x = speed * horizontal_direction
 	
 	if horizontal_direction != 0:
@@ -49,23 +74,6 @@ func _physics_process(delta):
 			stand()
 			stuck_under_object = false
 			print("Player was stuck but he is getting up")
-	
-	var was_on_floor = is_on_floor()
-	move_and_slide()
-	
-	# Started to fall
-	if was_on_floor && !is_on_floor() && velocity.y >= 0:
-		can_coyote_jump = true
-		coyote_timer.start()
-	
-	# Touched ground
-	if !was_on_floor && is_on_floor():
-		if jump_buffered:
-			jump_buffered = false
-			print("Buffered jump")
-			jump()
-	
-	update_animations(horizontal_direction)
 
 func jump():
 	if is_on_floor() || can_coyote_jump:

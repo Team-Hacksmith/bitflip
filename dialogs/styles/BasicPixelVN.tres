@@ -41,7 +41,8 @@ overrides = {
 "box_animation_new_text": "1",
 "box_animation_out": "1",
 "box_size": "Vector2(288, 80)",
-"name_label_box_offset": "Vector2(0, 10)"
+"name_label_box_offset": "Vector2(0, 10)",
+"next_indicator_size": "Vector2(8, 8)"
 }
 
 [sub_resource type="Resource" id="Resource_ebqha"]
