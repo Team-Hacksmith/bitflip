@@ -10,6 +10,9 @@ extends CharacterBody2D
 @onready var coyote_timer = $CoyoteTimer
 @onready var jump_buffer_timer = $JumpBufferTimer
 @onready var jump_height_timer = $JumpHeightTimer
+@onready var antennae: Node2D = $Antennae
+@onready var antenna_target1: Marker2D = $Antennae/AntennaTarget1
+@onready var antenna_target2: Marker2D = $Antennae/AntennaTarget2
 
 var can_coyote_jump = false
 var jump_buffered = false
@@ -29,6 +32,8 @@ func _physics_process(delta):
 	
 	var was_on_floor = is_on_floor()
 	velocity.x *= friction
+	antenna_target1.position.x = remap(velocity.x, -speed, speed, 2, -2)
+	antenna_target2.position.x = remap(velocity.x, -speed, speed, 2, -2)
 	move_and_slide()
 	
 	# Started to fall
@@ -82,17 +87,19 @@ func _on_jump_height_timer_timeout():
 		print("High jump")
 
 func update_animations(horizontal_direction):
-	if is_on_floor():
-		if horizontal_direction == 0:
-			ap.play("idle")
-		else:
-			ap.play("run")
-	else:
-		if velocity.y < 0:
-			ap.play("jump")
-		elif velocity.y > 0:
-			ap.play("fall")
+	#if is_on_floor():
+		#if horizontal_direction == 0:
+			#ap.play("idle")
+		#else:
+			#ap.play("run")
+	#else:
+		#if velocity.y < 0:
+			#ap.play("jump")
+		#elif velocity.y > 0:
+			#ap.play("fall")
+	pass
 
 func switch_direction(horizontal_direction):
-	sprite.flip_h = (horizontal_direction == -1)
+	#sprite.flip_h = (horizontal_direction == -1)
+	#antennae.scale.x = horizontal_direction
 	sprite.position.x = horizontal_direction * 4
