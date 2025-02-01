@@ -44,13 +44,11 @@ func _ready() -> void:
 	else: close()
 
 func _on_safe_area_body_entered(body: Node2D) -> void:
-	print("NO")
 	can_close = false
 
 func _on_safe_area_body_exited(body: Node2D) -> void:
-	print("YESS")
 	can_close = true
-	if state == DoorState.CLOSING:
+	if state == DoorState.CLOSING and close_timer.is_stopped():
 		state = DoorState.CLOSED
 
 func _on_close_timer_timeout() -> void:
