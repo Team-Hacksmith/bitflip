@@ -162,7 +162,6 @@ position = Vector2(2393, 584)
 [node name="StartTimeline" parent="." instance=ExtResource("21_4xv6b")]
 position = Vector2(576, 216)
 timeline = ExtResource("22_283es")
-only_once = true
 
 [node name="Interactable" parent="." instance=ExtResource("23_ubahl")]
 position = Vector2(400, 176)
