@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://baqa2j6l2ouj4"]
+[gd_scene load_steps=23 format=4 uid="uid://baqa2j6l2ouj4"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pdm61"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="2_m2y66"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://dewqft1c37kxv" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/18.png" id="16_ee865"]
 [ext_resource type="Texture2D" uid="uid://dr2jf0q27kjme" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/15.png" id="17_5miiq"]
 [ext_resource type="Texture2D" uid="uid://x30d3wq2lxik" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/4.png" id="17_x4msf"]
+[ext_resource type="PackedScene" uid="uid://toqia5r5q5tx" path="res://entities/start_timeline.tscn" id="21_4xv6b"]
+[ext_resource type="Resource" path="res://dialogs/timelines/RoombaWakeUp.dtl" id="22_283es"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_pdm61")
@@ -31,7 +33,6 @@ default_color = Color(0.356863, 0.92549, 0.945098, 1)
 node_a = NodePath("LaserDevice")
 node_b = NodePath("LaserDevice2")
 is_on = false
-toggle_time = 4.0
 
 [node name="LaserDevice" parent="Laser" instance=ExtResource("3_w2d8q")]
 position = Vector2(808, 304)
@@ -156,3 +157,8 @@ position = Vector2(1282, 396)
 
 [node name="Marker2D3" type="Marker2D" parent="CatMarkers"]
 position = Vector2(2393, 584)
+
+[node name="StartTimeline" parent="." instance=ExtResource("21_4xv6b")]
+position = Vector2(576, 216)
+timeline = ExtResource("22_283es")
+only_once = true
