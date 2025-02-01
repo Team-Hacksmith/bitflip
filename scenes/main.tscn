@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dewqft1c37kxv" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/18.png" id="16_ee865"]
 [ext_resource type="Texture2D" uid="uid://dr2jf0q27kjme" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/15.png" id="17_5miiq"]
 [ext_resource type="Texture2D" uid="uid://x30d3wq2lxik" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/4.png" id="17_x4msf"]
-[ext_resource type="PackedScene" uid="uid://toqia5r5q5tx" path="res://entities/start_timeline.tscn" id="21_4xv6b"]
+[ext_resource type="PackedScene" uid="uid://toqia5r5q5tx" path="res://entities/components/start_timeline.tscn" id="21_4xv6b"]
 [ext_resource type="Resource" path="res://dialogs/timelines/RoombaWakeUp.dtl" id="22_283es"]
 [ext_resource type="PackedScene" uid="uid://ld07dmcaibnu" path="res://entities/components/interactable.tscn" id="23_ubahl"]
 
