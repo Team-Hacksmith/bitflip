@@ -25,6 +25,7 @@ directories/dch_directory={
 "Cat": "res://dialogs/characters/Cat.dch"
 }
 directories/dtl_directory={
+"JumpingItemFound": "res://dialogs/timelines/JumpingItemFound.dtl",
 "RoombaWakeUp": "res://dialogs/timelines/RoombaWakeUp.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"
