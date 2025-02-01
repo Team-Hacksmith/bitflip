@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://cu8j7xbaxo1f6"]
+[gd_scene load_steps=16 format=3 uid="uid://cu8j7xbaxo1f6"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wvd2u"]
 [ext_resource type="Texture2D" uid="uid://l4gauitsc1us" path="res://assets/player_sprites/player.png" id="2_8fetl"]
 [ext_resource type="PackedScene" uid="uid://dc8rimqyknipt" path="res://entities/antenna.tscn" id="3_xmfgn"]
 [ext_resource type="PackedScene" uid="uid://r1j77re315r0" path="res://entities/antenna_segment.tscn" id="4_ijx4n"]
 [ext_resource type="PackedScene" uid="uid://b0jxd6wu7epxi" path="res://entities/antenna_joint.tscn" id="5_ge647"]
+[ext_resource type="PackedScene" uid="uid://ce6om8onyfgv1" path="res://entities/tire_smoke.tscn" id="6_l3pon"]
 
 [sub_resource type="SkeletonModification2DJiggle" id="SkeletonModification2DJiggle_jgk1w"]
 target_nodepath = NodePath("../AntennaTarget1")
@@ -424,6 +425,12 @@ shape = SubResource("CapsuleShape2D_vc2im")
 position = Vector2(0, -13)
 rotation = -1.57079
 shape = SubResource("CircleShape2D_1pxna")
+
+[node name="TireSmoke" parent="." instance=ExtResource("6_l3pon")]
+position = Vector2(-10, -4)
+
+[node name="TireSmoke2" parent="." instance=ExtResource("6_l3pon")]
+position = Vector2(10, -4)
 
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="timeout" from="JumpBufferTimer" to="." method="_on_jump_buffer_timer_timeout"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce6om8onyfgv1"]
+
+[ext_resource type="Texture2D" uid="uid://dx7wsgkaqsltb" path="res://assets/particle.png" id="1_cfyk4"]
+
+[sub_resource type="Curve" id="Curve_j1a53"]
+max_value = 5.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 5), 13.8976, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_qcy8y"]
+min_value = 0.2
+_data = [Vector2(0, 1), 0.0, -0.0796172, 0, 0, Vector2(1, 0.2), 0.0453176, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ooq7g"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="TireSmoke" type="CPUParticles2D"]
+amount = 100
+lifetime = 2.0
+texture = ExtResource("1_cfyk4")
+emission_shape = 1
+emission_sphere_radius = 5.15
+direction = Vector2(-1, 0)
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+tangential_accel_max = 50.0
+damping_max = 5.0
+damping_curve = SubResource("Curve_j1a53")
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.1
+scale_amount_curve = SubResource("Curve_qcy8y")
+color_ramp = SubResource("Gradient_ooq7g")

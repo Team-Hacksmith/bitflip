@@ -13,6 +13,8 @@ extends CharacterBody2D
 @onready var antennae: Node2D = $Antennae
 @onready var antenna_target1: Marker2D = $Sprite2D/Antennae/AntennaTarget1
 @onready var antenna_target2: Marker2D = $Sprite2D/Antennae/AntennaTarget2
+@onready var tire_smoke_left: CPUParticles2D = $TireSmoke
+@onready var tire_smoke_right: CPUParticles2D = $TireSmoke2
 
 var can_coyote_jump = false
 var jump_buffered = false
@@ -87,17 +89,36 @@ func _on_jump_height_timer_timeout():
 		print("High jump")
 
 func update_animations(horizontal_direction):
-	#if is_on_floor():
-		#if horizontal_direction == 0:
-			#ap.play("idle")
-		#else:
-			#ap.play("run")
+	if is_on_floor():
+		if horizontal_direction == 0:
+			stop_tire_smoke()
+		else:
+			start_tire_smoke()
+	else:
+		stop_tire_smoke()
 	#else:
 		#if velocity.y < 0:
 			#ap.play("jump")
 		#elif velocity.y > 0:
 			#ap.play("fall")
-	pass
+	
+func start_tire_smoke():
+	tire_smoke_left.emitting = true
+	tire_smoke_right.emitting = true
+	if velocity.x > 0:
+		tire_smoke_left.initial_velocity_min = velocity.x/3
+		tire_smoke_left.initial_velocity_max = velocity.x/3 + 50
+		tire_smoke_right.initial_velocity_min = velocity.x/3
+		tire_smoke_right.initial_velocity_max = velocity.x/3 + 50
+	elif velocity.x < 0:
+		tire_smoke_left.initial_velocity_min = velocity.x/3
+		tire_smoke_left.initial_velocity_max = velocity.x/3 - 50
+		tire_smoke_right.initial_velocity_min = velocity.x/3
+		tire_smoke_right.initial_velocity_max = velocity.x/3 - 50
+
+func stop_tire_smoke():
+	tire_smoke_left.emitting = false
+	tire_smoke_right.emitting = false
 
 func switch_direction(horizontal_direction):
 	#sprite.flip_h = (horizontal_direction == -1)
