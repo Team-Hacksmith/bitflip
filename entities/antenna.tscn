@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc8rimqyknipt"]
+
+[ext_resource type="Script" path="res://scripts/antenna.gd" id="1_h2tl7"]
+[ext_resource type="PackedScene" uid="uid://r1j77re315r0" path="res://entities/antenna_segment.tscn" id="2_kqwxc"]
+[ext_resource type="PackedScene" uid="uid://b0jxd6wu7epxi" path="res://entities/antenna_joint.tscn" id="3_qyg8h"]
+
+[node name="Antenna" type="PinJoint2D"]
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Antenna/AntennaSegment0")
+bias = 0.9
+motor_enabled = true
+motor_target_velocity = 0.830253
+script = ExtResource("1_h2tl7")
+
+[node name="AntennaSegment0" type="RigidBody2D" parent="." instance=ExtResource("2_kqwxc")]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = -1.0
+
+[node name="AntennaSegment1" type="RigidBody2D" parent="." instance=ExtResource("2_kqwxc")]
+position = Vector2(0, -4)
+collision_layer = 0
+collision_mask = 0
+gravity_scale = -1.0
+
+[node name="AntennaJoint1" type="PinJoint2D" parent="." instance=ExtResource("3_qyg8h")]
+modulate = Color(0, 0.566825, 0.333748, 0.32549)
+position = Vector2(0, -4)
+scale = Vector2(0.163377, 0.163377)
+node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Antenna/AntennaSegment0")
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Antenna/AntennaSegment1")
+angular_limit_lower = -0.785398
+angular_limit_upper = 0.785398
+motor_enabled = true
+
+[node name="AntennaSegment2" type="RigidBody2D" parent="." instance=ExtResource("2_kqwxc")]
+position = Vector2(0, -8)
+collision_layer = 0
+collision_mask = 0
+gravity_scale = -1.0
+
+[node name="AntennaJoint2" type="PinJoint2D" parent="." instance=ExtResource("3_qyg8h")]
+modulate = Color(0, 0.566825, 0.333748, 0.32549)
+position = Vector2(0, -8)
+scale = Vector2(0.163377, 0.163377)
+node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Antenna/AntennaSegment1")
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Antenna/AntennaSegment2")
+angular_limit_lower = -0.785398
+angular_limit_upper = 0.785398
+motor_enabled = true
+
+[node name="AntennaSegment3" type="RigidBody2D" parent="." instance=ExtResource("2_kqwxc")]
+position = Vector2(0, -12)
+collision_layer = 0
+collision_mask = 0
+gravity_scale = -1.0
+
+[node name="AntennaJoint3" type="PinJoint2D" parent="." instance=ExtResource("3_qyg8h")]
+modulate = Color(0, 0.566825, 0.333748, 0.32549)
+position = Vector2(0, -12)
+scale = Vector2(0.163377, 0.163377)
+node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Antenna/AntennaSegment2")
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Antenna/AntennaSegment3")
+angular_limit_lower = -0.785398
+angular_limit_upper = 0.785398
+motor_enabled = true
