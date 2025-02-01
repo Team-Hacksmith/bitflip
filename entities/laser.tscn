@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfl3p38sse3o"]
+
+[ext_resource type="Script" path="res://scripts/laser.gd" id="1_7a5mm"]
+[ext_resource type="Shader" path="res://shaders/laser.gdshader" id="1_lkba1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c2cd7"]
+shader = ExtResource("1_lkba1")
+shader_parameter/lightning_color = Color(0.356863, 0.92549, 0.945098, 1)
+shader_parameter/size = 0.233
+shader_parameter/width = 1.0
+shader_parameter/thickness = 0.417
+shader_parameter/speed = 0.66
+shader_parameter/cycle = 5.71
+shader_parameter/ratio = 0.0
+shader_parameter/time_shift = -102.095
+shader_parameter/wave_count = 3
+shader_parameter/flicker_speed = 20.0
+
+[sub_resource type="Animation" id="Animation_jrqy5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/cycle")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.71]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/width")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.233]
+}
+
+[sub_resource type="Animation" id="Animation_lwcw0"]
+resource_name = "turn_off"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/cycle")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [5.71, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/width")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.233, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jymdg"]
+_data = {
+"RESET": SubResource("Animation_jrqy5"),
+"turn_off": SubResource("Animation_lwcw0")
+}
+
+[node name="Laser" type="Line2D"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_c2cd7")
+position = Vector2(-48, 24)
+points = PackedVector2Array(-80, -24, 176, -24)
+width = 13.065
+texture_mode = 2
+script = ExtResource("1_7a5mm")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jymdg")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

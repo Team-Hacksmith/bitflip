@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct382erafv84u"]
+
+[ext_resource type="Texture2D" uid="uid://8cc6p4fihdwl" path="res://assets/Power-Station-Free-Tileset-Pixel-Art/4 Animated objects/Trap.png" id="1_1wwqs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6ytb"]
+atlas = ExtResource("1_1wwqs")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0ohy"]
+atlas = ExtResource("1_1wwqs")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtha5"]
+atlas = ExtResource("1_1wwqs")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kakq1"]
+atlas = ExtResource("1_1wwqs")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ekvgm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6ytb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0ohy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtha5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kakq1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LaserDevice" type="AnimatedSprite2D"]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_ekvgm")
+autoplay = "default"
+frame_progress = 0.0846199
+offset = Vector2(0, 6)
