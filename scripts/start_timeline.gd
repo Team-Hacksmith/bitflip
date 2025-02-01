@@ -1,14 +1,12 @@
-extends Area2D
+extends Node2D
 
+@onready var interactable: Interactable = %Interactable
 
 @export var timeline: DialogicTimeline
 @export var only_once: bool = false
 
-var is_done = false
+func _ready() -> void:
+	interactable.only_once = only_once
 
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		if only_once and is_done:
-			return
-		Dialogic.start(timeline)
-		is_done = true
+func _on_interactable_interact(with: Node2D) -> void:
+	Dialogic.start(timeline)

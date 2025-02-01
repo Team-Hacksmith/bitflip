@@ -15,13 +15,6 @@ signal player_hit
 		node_b = new
 		update_configuration_warnings()
 		return new
-		
-@export var update_laser: bool:
-	set(new):
-		_update_laser()
-		update_configuration_warnings()
-		
-@export var keep_updating_laser_for_debug: bool
 
 @export var is_on: bool = true:
 	set(new):
@@ -32,7 +25,17 @@ signal player_hit
 		else:
 			animation_player.play("turn_off")
 			
+@export var time_based: bool = false
 @export var toggle_time := 4.0
+
+@export_group("Debug")
+@export var update_laser: bool:
+	set(new):
+		_update_laser()
+		update_configuration_warnings()
+		
+@export var keep_updating_laser_for_debug: bool
+
 
 @onready var timer: Timer = $Timer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer

@@ -31,7 +31,7 @@ void fragment() {
 
         float bolt = abs(mod(rotated_UV.y * cycle + (rand(TIME + offset) + time_shift) * speed * -1., 0.5) - 0.25) - 0.125;
         bolt *= 4. * wave_width; // Apply randomized width
-        bolt *= (0.5 - abs(rotated_UV.y - 0.5)) * 2.; 
+        bolt *= (0.5 - abs(rotated_UV.y - 0.5)) * 2.;
 
         float wave = abs(rotated_UV.x - 0.5 + bolt);
         wave = 1. - step(size * wave_thickness, wave); // Apply randomized thickness

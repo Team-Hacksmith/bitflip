@@ -24,7 +24,6 @@ func _refresh():
 
 # Creates the antenna with segments and connects them with PinJoint2D joints.
 func create_antenna() -> void:
-	
 	var previous_segment: Node2D = null
 	
 	for i in range(segments):
@@ -36,7 +35,7 @@ func create_antenna() -> void:
 		segment_instance.name += str(i)
 		if i == 0:
 			node_b = segment_instance.get_path()
-		if Engine.is_editor_hint():
+		if Engine.is_editor_hint() and get_tree():
 			segment_instance.owner = get_tree().edited_scene_root
 		
 		# If there's a previous segment, connect it to the current one with a joint.
