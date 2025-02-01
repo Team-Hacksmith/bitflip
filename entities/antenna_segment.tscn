@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://r1j77re315r0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_17s3j"]
+radius = 0.5
+height = 4.0
+
+[node name="AntennaSegment" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+mass = 2.0
+gravity_scale = -2.0
+linear_damp = 3.0
+angular_damp = 2.0
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(0, -2)
+points = PackedVector2Array(0, 2, 0, -2)
+width = 1.0
+default_color = Color(0, 0, 0, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0.365161, 0.00151371, 0.625845, 1)
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_17s3j")

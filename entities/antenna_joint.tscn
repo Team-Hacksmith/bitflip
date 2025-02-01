@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b0jxd6wu7epxi"]
+
+[node name="AntennaJoint" type="PinJoint2D"]
+modulate = Color(0, 0.566825, 0.333748, 0.32549)
+scale = Vector2(0.163377, 0.163377)
+bias = 0.155
+angular_limit_lower = -0.785398
+angular_limit_upper = 0.785398
+motor_enabled = true
