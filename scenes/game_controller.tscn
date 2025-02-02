@@ -9,8 +9,10 @@ script = ExtResource("1_jxpow")
 
 [node name="World" type="Node2D" parent="."]
 unique_name_in_owner = true
+process_mode = 1
 
 [node name="UILayer" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="GUI" type="Control" parent="UILayer"]
 unique_name_in_owner = true

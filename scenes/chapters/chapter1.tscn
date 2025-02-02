@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://daa2xefulcga4"]
+[gd_scene load_steps=22 format=4 uid="uid://daa2xefulcga4"]
 
 [ext_resource type="Script" path="res://scripts/chapter1.gd" id="1_lvu8y"]
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="2_3bgus"]
@@ -15,12 +15,16 @@
 [ext_resource type="PackedScene" uid="uid://cfl3p38sse3o" path="res://entities/laser.tscn" id="11_q7brj"]
 [ext_resource type="PackedScene" uid="uid://ct382erafv84u" path="res://entities/laser_device.tscn" id="12_n5ig4"]
 [ext_resource type="Texture2D" uid="uid://dxmvrarv0l2t6" path="res://assets/AbandonedCity_Assets_Glerf/Clock_Moss.png" id="13_0uppd"]
-[ext_resource type="PackedScene" path="res://entities/interactables/level_changer.tscn" id="14_gbvnf"]
+[ext_resource type="PackedScene" uid="uid://bqbd4mr86rhti" path="res://entities/interactables/level_changer.tscn" id="14_gbvnf"]
 [ext_resource type="PackedScene" uid="uid://toqia5r5q5tx" path="res://entities/interactables/start_timeline.tscn" id="17_orbd3"]
 [ext_resource type="Resource" path="res://dialogs/timelines/RoombaWakeUp.dtl" id="18_ue58s"]
+[ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="19_mx3tj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eobc7"]
 size = Vector2(92, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dx3s0"]
+size = Vector2(609, 278)
 
 [node name="Chapter1" type="Node2D"]
 script = ExtResource("1_lvu8y")
@@ -94,7 +98,7 @@ position = Vector2(1611, 628)
 texture = ExtResource("9_7uq44")
 
 [node name="9" type="Sprite2D" parent="props"]
-position = Vector2(1872, 884)
+position = Vector2(1872, 889)
 texture = ExtResource("10_feyxo")
 
 [node name="10" type="Sprite2D" parent="props"]
@@ -129,7 +133,7 @@ position = Vector2(2409, 860)
 
 [node name="Laser1" parent="." node_paths=PackedStringArray("node_a", "node_b") instance=ExtResource("11_q7brj")]
 position = Vector2(-48, 16)
-points = PackedVector2Array(810, 394, 1133, 390)
+points = PackedVector2Array(810, 394, 1137, 390)
 default_color = Color(0.356863, 0.92549, 0.945098, 1)
 node_a = NodePath("LaserDevice")
 node_b = NodePath("LaserDevice2")
@@ -142,7 +146,7 @@ position = Vector2(810, 394)
 scale = Vector2(0.999999, 1)
 
 [node name="LaserDevice2" parent="Laser1" instance=ExtResource("12_n5ig4")]
-position = Vector2(1133, 390)
+position = Vector2(1137, 390)
 rotation = -1.5708
 
 [node name="Laser2" parent="." node_paths=PackedStringArray("node_a", "node_b") instance=ExtResource("11_q7brj")]
@@ -173,3 +177,16 @@ shape = SubResource("RectangleShape2D_eobc7")
 [node name="StartTimeline" parent="." instance=ExtResource("17_orbd3")]
 position = Vector2(1933, 921)
 timeline = ExtResource("18_ue58s")
+
+[node name="DeadZone" parent="." instance=ExtResource("19_mx3tj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
+position = Vector2(-285.5, 677)
+shape = SubResource("RectangleShape2D_dx3s0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeadZone"]
+position = Vector2(2672, 1068)
+shape = SubResource("RectangleShape2D_dx3s0")
+
+[connection signal="player_hit" from="Laser1" to="Player" method="die"]
+[connection signal="player_hit" from="Laser2" to="Player" method="die"]

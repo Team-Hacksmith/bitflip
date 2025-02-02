@@ -1,15 +1,24 @@
-[gd_scene load_steps=7 format=4 uid="uid://cfsiyu56shvuj"]
+[gd_scene load_steps=9 format=4 uid="uid://cfsiyu56shvuj"]
 
+[ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="1_1rdpy"]
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="1_6q1re"]
 [ext_resource type="TileSet" uid="uid://cyyg6ih6cfuo2" path="res://resources/ground_tileset.tres" id="2_o2c8e"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="3_6rrym"]
 [ext_resource type="PackedScene" uid="uid://bo5aiheasph7x" path="res://entities/cat.tscn" id="4_owat2"]
 [ext_resource type="PackedScene" uid="uid://bqbd4mr86rhti" path="res://entities/interactables/level_changer.tscn" id="5_6ij0m"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_47vdd"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ii1w2"]
 size = Vector2(110, 100)
 
 [node name="Chapter0" type="Node2D"]
+
+[node name="DeadZone" parent="." instance=ExtResource("1_1rdpy")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
+position = Vector2(-27, 332)
+shape = SubResource("WorldBoundaryShape2D_47vdd")
 
 [node name="DayParallaxBackground" parent="." instance=ExtResource("1_6q1re")]
 
@@ -34,6 +43,7 @@ position = Vector2(553, 144)
 
 [node name="LevelChanger" parent="." instance=ExtResource("5_6ij0m")]
 position = Vector2(527, 112)
+chapter_num = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChanger"]
 position = Vector2(35, -1)

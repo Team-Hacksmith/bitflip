@@ -50,9 +50,12 @@ func change_scene(new_scene: String, delete: bool = true, keep_running: bool = f
 	var new = load(new_scene).instantiate()
 	world.add_child(new)
 	curr_scene = new
+	get_tree().paused = false
 	await transition_controller.animate_out()
 
 func _clear_scene(delete: bool = true, keep_running: bool = false) -> void:
+	get_tree().paused = true
+	
 	if delete:
 		if curr_gui_scene:
 			curr_gui_scene.queue_free()
