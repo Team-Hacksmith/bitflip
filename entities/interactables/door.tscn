@@ -16,7 +16,7 @@ size = Vector2(38, 57)
 [node name="Door" type="StaticBody2D"]
 disable_mode = 1
 collision_layer = 130
-collision_mask = 5
+collision_mask = 133
 script = ExtResource("1_7uwvd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -40,7 +40,7 @@ one_shot = true
 
 [node name="SafeArea" type="Area2D" parent="."]
 collision_layer = 128
-collision_mask = 5
+collision_mask = 141
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SafeArea"]
 position = Vector2(0, -28.5)

@@ -31,6 +31,7 @@ enum DoorState {
 				indicator_collision_shape_2d.set_deferred("disabled", false)
 				
 var can_close: bool = true
+var bodies_stack: Array[Node2D] = []
 
 func open():
 	state = DoorState.OPEN
@@ -45,8 +46,11 @@ func _ready() -> void:
 
 func _on_safe_area_body_entered(body: Node2D) -> void:
 	can_close = false
+	bodies_stack.push_back(body)
 
 func _on_safe_area_body_exited(body: Node2D) -> void:
+	bodies_stack.erase(body)
+	if len(bodies_stack) > 0: return # still overlapping bodies
 	can_close = true
 	if state == DoorState.CLOSING and close_timer.is_stopped():
 		state = DoorState.CLOSED
