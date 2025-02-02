@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cp2db0yuyqgqp"]
+[gd_scene load_steps=11 format=3 uid="uid://clgbuqj0ebd4b"]
 
 [ext_resource type="Script" path="res://scripts/hidden_spikes.gd" id="1_u00wp"]
 [ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="2_c8rgh"]
