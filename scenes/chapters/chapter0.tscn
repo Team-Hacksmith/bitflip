@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cfsiyu56shvuj"]
+[gd_scene load_steps=11 format=4 uid="uid://cfsiyu56shvuj"]
 
 [ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="1_1rdpy"]
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="1_6q1re"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="3_6rrym"]
 [ext_resource type="PackedScene" uid="uid://bo5aiheasph7x" path="res://entities/cat.tscn" id="4_owat2"]
 [ext_resource type="PackedScene" uid="uid://bqbd4mr86rhti" path="res://entities/interactables/level_changer.tscn" id="5_6ij0m"]
+[ext_resource type="PackedScene" uid="uid://wevdjfcvru2r" path="res://entities/interactables/door.tscn" id="7_dyjvg"]
+[ext_resource type="PackedScene" uid="uid://6xogjk0a84ah" path="res://entities/interactables/interactable_btn.tscn" id="8_5psj6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_47vdd"]
 
@@ -48,3 +50,10 @@ chapter_num = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChanger"]
 position = Vector2(35, -1)
 shape = SubResource("RectangleShape2D_ii1w2")
+
+[node name="Door" parent="." instance=ExtResource("7_dyjvg")]
+position = Vector2(392, 160)
+
+[node name="InteractableBtn" parent="." node_paths=PackedStringArray("trigger_object") instance=ExtResource("8_5psj6")]
+position = Vector2(312, 160)
+trigger_object = NodePath("../Door")
