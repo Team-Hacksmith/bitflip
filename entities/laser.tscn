@@ -112,7 +112,7 @@ script = ExtResource("1_7a5mm")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.2
+wait_time = 4.0
 autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

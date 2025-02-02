@@ -22,6 +22,21 @@ size = Vector2(304, 174)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ii1w2"]
 size = Vector2(128, 96)
 
+[sub_resource type="Animation" id="Animation_kk5ba"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(464, 136)]
+}
+
 [sub_resource type="Animation" id="Animation_d833u"]
 resource_name = "platforms"
 loop_mode = 2
@@ -36,21 +51,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(464, 136), Vector2(464, 16)]
-}
-
-[sub_resource type="Animation" id="Animation_kk5ba"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(464, 136)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kgukr"]

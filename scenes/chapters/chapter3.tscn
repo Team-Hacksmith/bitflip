@@ -1,6 +1,6 @@
 [gd_scene load_steps=56 format=4 uid="uid://cp62k8b6dm0mx"]
 
-[ext_resource type="Script" path="res://scripts/chapter3.gd" id="1_4ccoe"]
+[ext_resource type="Script" path="res://scripts/chapter3.gd" id="1_0mkuq"]
 [ext_resource type="PackedScene" uid="uid://bal5enltwdq06" path="res://entities/night_parallax_background.tscn" id="2_3cul0"]
 [ext_resource type="Texture2D" uid="uid://d02evfp3l2eg0" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/3.png" id="3_r7b63"]
 [ext_resource type="TileSet" uid="uid://cyyg6ih6cfuo2" path="res://resources/ground_tileset.tres" id="3_trw62"]
@@ -159,6 +159,45 @@ _data = {
 "vertical level 3": SubResource("Animation_2pixg")
 }
 
+[sub_resource type="Animation" id="Animation_6ps7g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7472, -1955)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MovingPlatform5:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7663, -1955)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../MovingPlatform6:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7856, -1957)]
+}
+
 [sub_resource type="Animation" id="Animation_dqlno"]
 resource_name = "spikes_down"
 length = 20.0
@@ -200,49 +239,25 @@ tracks/2/keys = {
 "values": [Vector2(7856, -1957), Vector2(7856, -1729), Vector2(7856, -1957), Vector2(7856, -1729), Vector2(7856, -1957), Vector2(7856, -1729), Vector2(7856, -1957), Vector2(7856, -1729), Vector2(7856, -1957), Vector2(7856, -1729), Vector2(7856, -1957)]
 }
 
-[sub_resource type="Animation" id="Animation_6ps7g"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yuql1"]
+_data = {
+"RESET": SubResource("Animation_6ps7g"),
+"spikes_down": SubResource("Animation_dqlno")
+}
+
+[sub_resource type="Animation" id="Animation_kcm3i"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(7472, -1955)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../MovingPlatform5:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(7663, -1955)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../MovingPlatform6:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(7856, -1957)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_yuql1"]
-_data = {
-"RESET": SubResource("Animation_6ps7g"),
-"spikes_down": SubResource("Animation_dqlno")
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_xf2cd"]
@@ -262,29 +277,14 @@ tracks/0/keys = {
 "values": [0.0, 1.5708]
 }
 
-[sub_resource type="Animation" id="Animation_kcm3i"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5ow4n"]
 _data = {
 "RESET": SubResource("Animation_kcm3i"),
 "rotation": SubResource("Animation_xf2cd")
 }
 
-[node name="Chapter2" type="Node2D"]
-script = ExtResource("1_gthe0")
+[node name="Chapter3" type="Node2D"]
+script = ExtResource("1_0mkuq")
 
 [node name="NightParallaxBackground" parent="." instance=ExtResource("2_3cul0")]
 
@@ -668,7 +668,6 @@ position = Vector2(8316, -1764)
 [node name="StaticSpikeSet2" parent="RadialPlatform" instance=ExtResource("10_qg3mx")]
 position = Vector2(-254.612, 133.895)
 rotation = 1.95195
-scale = Vector2(1, 1)
 
 [node name="Platform" parent="RadialPlatform" instance=ExtResource("16_kkxf2")]
 position = Vector2(-278.612, 124.895)
