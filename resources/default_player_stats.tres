@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="PlayerStats" load_steps=3 format=3 uid="uid://bvouutxlbrwvq"]
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=2 format=3 uid="uid://c5e1vnlexash2"]
 
 [ext_resource type="Script" path="res://scripts/player_stats.gd" id="1_nrl1h"]
-[ext_resource type="Resource" uid="uid://mjx1ldxur7ft" path="res://resources/default_player_abilities.tres" id="1_waxtg"]
 
 [resource]
 script = ExtResource("1_nrl1h")
 health = 100.0
 parts_obtained = Array[int]([])
-abilities = ExtResource("1_waxtg")
+min_speed = 20
+max_speed = 30
+max_jump_force = 400

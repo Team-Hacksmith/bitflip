@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cfsiyu56shvuj"]
+[gd_scene load_steps=25 format=4 uid="uid://cfsiyu56shvuj"]
 
 [ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="1_1rdpy"]
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="1_6q1re"]
@@ -14,7 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://yaf7jlyqs22w" path="res://entities/moving_platform.tscn" id="12_ioigh"]
 [ext_resource type="PackedScene" uid="uid://dxy15nkc8v5xa" path="res://entities/interactables/broken_part.tscn" id="13_okum3"]
 [ext_resource type="Texture2D" uid="uid://bf4wix23usii5" path="res://assets/wheel.png" id="14_6xxu8"]
+[ext_resource type="Resource" path="res://dialogs/timelines/abilities/SpeedFound.dtl" id="15_83615"]
 [ext_resource type="Texture2D" uid="uid://bey2jwsjjeatq" path="res://assets/spring.png" id="15_w3xet"]
+[ext_resource type="Resource" path="res://dialogs/timelines/abilities/JumpFound.dtl" id="17_nxh8p"]
+[ext_resource type="Texture2D" uid="uid://cryhymyn2ye1g" path="res://assets/gun.png" id="18_318lr"]
+[ext_resource type="Resource" path="res://dialogs/timelines/abilities/GunFound.dtl" id="19_p1yi1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfods"]
 size = Vector2(304, 174)
@@ -135,11 +139,20 @@ position = Vector2(464, 136)
 position = Vector2(616, 240)
 title = "Wheel"
 texture = ExtResource("14_6xxu8")
+timeline = ExtResource("15_83615")
 
 [node name="BrokenPart3" parent="." instance=ExtResource("13_okum3")]
 position = Vector2(792, 304)
 title = "Spring"
 part = 1
 texture = ExtResource("15_w3xet")
+timeline = ExtResource("17_nxh8p")
+
+[node name="BrokenPart4" parent="." instance=ExtResource("13_okum3")]
+position = Vector2(912, 304)
+title = "Gun"
+part = 2
+texture = ExtResource("18_318lr")
+timeline = ExtResource("19_p1yi1")
 
 [connection signal="player_hit" from="Laser" to="Player" method="die"]

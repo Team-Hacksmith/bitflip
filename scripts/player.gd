@@ -63,26 +63,30 @@ func _physics_process(delta):
 
 
 func apply_abilities():
-	if stats.abilities.speed:
-		speed = stats.abilities.max_speed
+	var aspeed = Global.BrokenParts.WHEEL in stats.parts_obtained
+	var ajump = Global.BrokenParts.SPRING in stats.parts_obtained
+	var agun = Global.BrokenParts.GUN in stats.parts_obtained
+	if aspeed:
+		speed = stats.max_speed
 	else:
-		speed = stats.abilities.min_speed
+		speed = stats.min_speed
 	
-	if stats.abilities.jump:
-		jump_force = stats.abilities.jump_force
+	if ajump:
+		jump_force = stats.max_jump_force
 	else:
 		jump_force = 0
 	
-	if stats.abilities.gun:
+	if agun:
 		pass
 		
-	if not stats.abilities.speed:
+	if not aspeed:
 		sprite.frame = 0
-	elif not stats.abilities.jump:
+	elif not ajump:
 		sprite.frame = 1
-	elif not stats.abilities.gun:
+	elif not agun:
 		sprite.frame = 2
-	print(speed, jump_force)
+	else:
+		sprite.frame = 2
 	
 	
 func handle_pushing(delta):

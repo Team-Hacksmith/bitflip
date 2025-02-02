@@ -30,6 +30,7 @@ directories/dch_directory={
 "roomba": "res://dialogs/characters/roomba.dch"
 }
 directories/dtl_directory={
+"GunFound": "res://dialogs/timelines/abilities/GunFound.dtl",
 "JumpFound": "res://dialogs/timelines/abilities/JumpFound.dtl",
 "JumpingItemFound": "res://dialogs/timelines/JumpingItemFound.dtl",
 "RoombaWakeUp": "res://dialogs/timelines/RoombaWakeUp.dtl",
