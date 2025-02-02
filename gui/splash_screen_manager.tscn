@@ -1,22 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl3hgbwo0ee3b"]
+[gd_scene load_steps=4 format=3 uid="uid://bl3hgbwo0ee3b"]
 
-[ext_resource type="Texture2D" uid="uid://nsn5fgnilj7m" path="res://assets/ui/cat_idle/cat_idle_0.png" id="1_4wcha"]
 [ext_resource type="Script" path="res://scripts/splash_screen_manager.gd" id="1_qh32e"]
-[ext_resource type="Texture2D" uid="uid://6we868u51adf" path="res://assets/ui/cat_idle/cat_idle_1.png" id="2_7nx6s"]
-[ext_resource type="Texture2D" uid="uid://diht2lkxoqsas" path="res://assets/ui/cat_idle/cat_idle_2.png" id="3_d00o0"]
-[ext_resource type="Texture2D" uid="uid://dr04bk4ogcici" path="res://assets/ui/cat_idle/cat_idle_3.png" id="4_4xqxj"]
+[ext_resource type="Texture2D" uid="uid://dacong3cyyogr" path="res://resources/cat_tail_animated_texture.tres" id="2_omr1q"]
 [ext_resource type="Theme" uid="uid://dhtr7jec27kra" path="res://resources/ui_theme.tres" id="5_d4elp"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_3aehk"]
-frames = 4
-speed_scale = 2.5
-frame_0/texture = ExtResource("1_4wcha")
-frame_1/texture = ExtResource("2_7nx6s")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("3_d00o0")
-frame_2/duration = 1.0
-frame_3/texture = ExtResource("4_4xqxj")
-frame_3/duration = 1.0
 
 [node name="SplashScreenManager" type="Control" node_paths=PackedStringArray("splash_screen")]
 layout_mode = 3
@@ -51,7 +37,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="ColorRect/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(90.28, 55.765)
 layout_mode = 2
-texture = SubResource("AnimatedTexture_3aehk")
+texture = ExtResource("2_omr1q")
 expand_mode = 3
 
 [node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]

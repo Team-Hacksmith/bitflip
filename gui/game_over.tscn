@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6q1lby67bp66"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_8esf7"]
+[ext_resource type="Texture2D" uid="uid://dacong3cyyogr" path="res://resources/cat_tail_animated_texture.tres" id="1_o2va3"]
+[ext_resource type="Theme" uid="uid://dhtr7jec27kra" path="res://resources/ui_theme.tres" id="5_x6q8a"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8esf7")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(90.28, 55.765)
+layout_mode = 2
+texture = ExtResource("1_o2va3")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_x6q8a")
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/line_spacing = -10
+theme_override_font_sizes/font_size = 48
+text = "GAME OVER"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme = ExtResource("5_x6q8a")
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/line_spacing = -10
+theme_override_font_sizes/font_size = 23
+text = "You Broke Beyond Repair"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_x6q8a")
+theme_type_variation = &"TooltipLabel"
+theme_override_colors/font_color = Color(1, 1, 1, 0.482353)
+theme_override_font_sizes/font_size = 13
+text = "Press any key to restart"
+horizontal_alignment = 1

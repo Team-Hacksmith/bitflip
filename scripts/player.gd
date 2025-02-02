@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var jump_force = 300
 # This represents the player's inertia.
 @export var push_force = 200
+@export var stats: PlayerStats = preload("res://resources/default_player_stats.tres") 
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
@@ -19,9 +20,10 @@ var can_coyote_jump = false
 var jump_buffered = false
 var is_disabled = false
 
+func _ready() -> void:
+	Global.player_stats = stats
 
 func _physics_process(delta):
-			
 	# Disabling player movement when dialogic timeline is active
 	is_disabled = Dialogic.current_timeline != null
 	
@@ -114,7 +116,7 @@ func update_animations(horizontal_direction):
 			#ap.play("jump")
 		#elif velocity.y > 0:
 			#ap.play("fall")
-	
+
 func start_tire_smoke():
 	tire_smoke_left.emitting = true
 	tire_smoke_right.emitting = true
@@ -136,3 +138,7 @@ func stop_tire_smoke():
 func switch_direction(horizontal_direction):
 	#sprite.flip_h = (horizontal_direction == -1)
 	sprite.position.x = horizontal_direction * 4
+
+func die():
+	print("DED")
+	stats.health = 0
