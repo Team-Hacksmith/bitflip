@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://bl3hgbwo0ee3b"]
+
+[ext_resource type="Texture2D" uid="uid://nsn5fgnilj7m" path="res://assets/ui/cat_idle/cat_idle_0.png" id="1_4wcha"]
+[ext_resource type="Script" path="res://scripts/splash_screen_manager.gd" id="1_qh32e"]
+[ext_resource type="Texture2D" uid="uid://6we868u51adf" path="res://assets/ui/cat_idle/cat_idle_1.png" id="2_7nx6s"]
+[ext_resource type="PackedScene" uid="uid://cfsiyu56shvuj" path="res://scenes/chapters/chapter0.tscn" id="2_sfdnx"]
+[ext_resource type="Texture2D" uid="uid://diht2lkxoqsas" path="res://assets/ui/cat_idle/cat_idle_2.png" id="3_d00o0"]
+[ext_resource type="Texture2D" uid="uid://dr04bk4ogcici" path="res://assets/ui/cat_idle/cat_idle_3.png" id="4_4xqxj"]
+[ext_resource type="Theme" uid="uid://l7axbibprpe" path="res://resources/ui_theme.tres" id="5_d4elp"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_3aehk"]
+frames = 4
+speed_scale = 2.5
+frame_0/texture = ExtResource("1_4wcha")
+frame_1/texture = ExtResource("2_7nx6s")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_d00o0")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_4xqxj")
+frame_3/duration = 1.0
+
+[node name="SplashScreenManager" type="Control" node_paths=PackedStringArray("splash_screen")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qh32e")
+load_scene = ExtResource("2_sfdnx")
+splash_screen = NodePath("ColorRect/CenterContainer/VBoxContainer")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(90.28, 55.765)
+layout_mode = 2
+texture = SubResource("AnimatedTexture_3aehk")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_d4elp")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 48
+text = "BitFlip"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_d4elp")
+theme_type_variation = &"TooltipLabel"
+theme_override_colors/font_color = Color(1, 1, 1, 0.482353)
+theme_override_font_sizes/font_size = 13
+text = "Press any key to start"
+horizontal_alignment = 1
