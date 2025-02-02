@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddjtdttgd11jv"]
+
+[ext_resource type="PackedScene" uid="uid://cx8ega5l44cjj" path="res://entities/StaticSpike.tscn" id="1_fbyna"]
+
+[node name="StaticSpikeSet" type="Node2D"]
+
+[node name="StaticSpike" parent="." instance=ExtResource("1_fbyna")]
+
+[node name="StaticSpike2" parent="." instance=ExtResource("1_fbyna")]
+position = Vector2(19, 0)
+
+[node name="StaticSpike5" parent="." instance=ExtResource("1_fbyna")]
+position = Vector2(39, 0)
+
+[node name="StaticSpike3" parent="." instance=ExtResource("1_fbyna")]
+position = Vector2(-18, 0)
+
+[node name="StaticSpike4" parent="." instance=ExtResource("1_fbyna")]
+position = Vector2(-37, 0)
