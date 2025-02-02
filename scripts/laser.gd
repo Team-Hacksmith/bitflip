@@ -36,10 +36,17 @@ signal player_hit
 		
 @export var keep_updating_laser_for_debug: bool
 
-
 @onready var timer: Timer = $Timer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var area_2d: Area2D = $Area2D
+
+var is_player_inside = false
+
+func _ready() -> void:
+	timer.wait_time = toggle_time + .2
+	_update_laser()
+	if not Engine.is_editor_hint():
+		_setup_collision()
 
 func _update_laser():
 	#print(node_a, node_b)
@@ -67,12 +74,6 @@ func _setup_collision():
 		rect.extents = Vector2(length / 2, 4)
 		new_shape.shape = rect
 
-func _ready() -> void:
-	timer.wait_time = toggle_time
-	_update_laser()
-	if not Engine.is_editor_hint():
-		_setup_collision()
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint() and keep_updating_laser_for_debug:
@@ -89,9 +90,19 @@ func _get_configuration_warnings():
 
 func _on_timer_timeout() -> void:
 	is_on = !is_on
+	if is_player_inside and is_on:
+		player_hit.emit()
+		print("player already in laser")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player") and is_on:
-		player_hit.emit()
-		print("player hit laser")
+	if body.is_in_group("player"):
+		is_player_inside = true
+		if is_on:
+			player_hit.emit()
+			print("player hit laser")
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		is_player_inside = false

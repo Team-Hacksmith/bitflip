@@ -104,8 +104,7 @@ _data = {
 [node name="Laser" type="Line2D"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_c2cd7")
-position = Vector2(-48, 24)
-points = PackedVector2Array(-80, -24, 176, -24)
+points = PackedVector2Array(-88, 0, 88, 0)
 width = 13.065
 texture_mode = 2
 script = ExtResource("1_7a5mm")
@@ -113,7 +112,7 @@ script = ExtResource("1_7a5mm")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 4.2
 autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -122,4 +121,5 @@ libraries = {
 }
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

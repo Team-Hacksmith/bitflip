@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var jump_force = 300
 # This represents the player's inertia.
 @export var push_force = 200
-@export var stats: PlayerStats = preload("res://resources/default_player_stats.tres") 
+@export var default_stats: PlayerStats = preload("res://resources/default_player_stats.tres") 
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
@@ -15,13 +15,17 @@ extends CharacterBody2D
 @onready var jump_height_timer = $JumpHeightTimer
 @onready var tire_smoke_left: CPUParticles2D = $TireSmoke
 @onready var tire_smoke_right: CPUParticles2D = $TireSmoke2
+@onready var dead_particles: CPUParticles2D = %DeadParticles
 
 var can_coyote_jump = false
 var jump_buffered = false
 var is_disabled = false
+var stats: PlayerStats = default_stats
 
 func _ready() -> void:
+	stats.health = 100
 	Global.player_stats = stats
+	stats.dead.connect(_on_player_dead)
 
 func _physics_process(delta):
 	# Disabling player movement when dialogic timeline is active
@@ -31,7 +35,6 @@ func _physics_process(delta):
 		velocity.y += gravity
 		if velocity.y > 1000:
 			velocity.y = 1000
-	
 	var horizontal_direction = Input.get_axis("move_left", "move_right")
 	handle_inputs(horizontal_direction)
 	
@@ -55,6 +58,7 @@ func _physics_process(delta):
 	# Handle pushing objects
 	handle_pushing(delta)
 	
+	
 func handle_pushing(delta):
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
@@ -69,6 +73,7 @@ func handle_pushing(delta):
 			
 func handle_inputs(horizontal_direction: float):
 	if is_disabled: return
+	if stats.health == 0: return
 	if Input.is_action_just_pressed("jump"):
 		jump_height_timer.start()
 		jump()
@@ -142,3 +147,9 @@ func switch_direction(horizontal_direction):
 func die():
 	print("DED")
 	stats.health = 0
+
+func _on_player_dead():
+	sprite.queue_free()
+	$CollisionShape2D.queue_free()
+	$CollisionShape2D2.queue_free()
+	dead_particles.emitting = true

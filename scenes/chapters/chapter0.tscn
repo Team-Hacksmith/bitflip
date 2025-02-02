@@ -1,18 +1,20 @@
-[gd_scene load_steps=11 format=4 uid="uid://cfsiyu56shvuj"]
+[gd_scene load_steps=13 format=4 uid="uid://cfsiyu56shvuj"]
 
 [ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="1_1rdpy"]
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="1_6q1re"]
 [ext_resource type="TileSet" uid="uid://cyyg6ih6cfuo2" path="res://resources/ground_tileset.tres" id="2_o2c8e"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="3_6rrym"]
 [ext_resource type="PackedScene" uid="uid://bo5aiheasph7x" path="res://entities/cat.tscn" id="4_owat2"]
-[ext_resource type="PackedScene" path="res://entities/interactables/level_changer.tscn" id="5_6ij0m"]
+[ext_resource type="PackedScene" uid="uid://bqbd4mr86rhti" path="res://entities/interactables/level_changer.tscn" id="5_6ij0m"]
 [ext_resource type="PackedScene" uid="uid://wevdjfcvru2r" path="res://entities/interactables/door.tscn" id="7_dyjvg"]
 [ext_resource type="PackedScene" uid="uid://6xogjk0a84ah" path="res://entities/interactables/interactable_btn.tscn" id="8_5psj6"]
+[ext_resource type="PackedScene" uid="uid://cfl3p38sse3o" path="res://entities/laser.tscn" id="9_qjfn4"]
+[ext_resource type="PackedScene" uid="uid://ct382erafv84u" path="res://entities/laser_device.tscn" id="10_fb5mm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_47vdd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ii1w2"]
-size = Vector2(110, 100)
+size = Vector2(128, 96)
 
 [node name="Chapter0" type="Node2D"]
 
@@ -48,7 +50,7 @@ position = Vector2(527, 112)
 chapter_num = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChanger"]
-position = Vector2(35, -1)
+position = Vector2(113, 96)
 shape = SubResource("RectangleShape2D_ii1w2")
 
 [node name="Door" parent="." instance=ExtResource("7_dyjvg")]
@@ -57,3 +59,20 @@ position = Vector2(392, 160)
 [node name="InteractableBtn" parent="." node_paths=PackedStringArray("trigger_object") instance=ExtResource("8_5psj6")]
 position = Vector2(312, 160)
 trigger_object = NodePath("../Door")
+
+[node name="Laser" parent="." node_paths=PackedStringArray("node_a", "node_b") instance=ExtResource("9_qjfn4")]
+position = Vector2(252, 94)
+points = PackedVector2Array(212, -70, 212, 66)
+node_a = NodePath("LaserDevice")
+node_b = NodePath("LaserDevice2")
+keep_updating_laser_for_debug = true
+
+[node name="LaserDevice" parent="Laser" instance=ExtResource("10_fb5mm")]
+position = Vector2(212, -70)
+rotation = 3.14159
+
+[node name="LaserDevice2" parent="Laser" instance=ExtResource("10_fb5mm")]
+position = Vector2(212, 66)
+rotation = 0.0
+
+[connection signal="player_hit" from="Laser" to="Player" method="die"]
