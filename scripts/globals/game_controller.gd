@@ -24,7 +24,7 @@ func get_chapter_path(chapter_num: int):
 func change_to_chapter_safe(chapter_num: int):
 	curr_chapter = clampi(chapter_num, 0, max_chapters)
 	var next_chapter_path = get_chapter_path(curr_chapter)
-	change_scene(next_chapter_path)
+	await change_scene(next_chapter_path)
 	print("Changed chapter to: ", next_chapter_path)
 
 func change_to_next_chapter():
@@ -64,12 +64,14 @@ func _clear_scene(delete: bool = true, keep_running: bool = false) -> void:
 			curr_scene.queue_free()
 			curr_scene = null
 	elif keep_running:
-		if curr_gui_scene:
-			curr_gui_scene.visible = false
-		if curr_scene:
-			curr_scene.visible = false
+		pass
+		#if curr_gui_scene:
+			#curr_gui_scene.visible = false
+		#if curr_scene:
+			#curr_scene.visible = false
 	else:
-		if curr_gui_scene and curr_gui_scene.get_parent() == gui:
-			gui.remove_child(curr_gui_scene)
-		if curr_scene and curr_scene.get_parent() == world:
-			world.remove_child(curr_scene)
+		#if curr_gui_scene and curr_gui_scene.get_parent() == gui:
+			#gui.remove_child(curr_gui_scene)
+		#if curr_scene and curr_scene.get_parent() == world:
+			#world.remove_child(curr_scene)
+		pass
