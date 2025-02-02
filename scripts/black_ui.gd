@@ -2,7 +2,7 @@ extends Control
 
 @export var text_array: Array[String]
 
-var container = $ColorRect/CenterContainer
+@onready var container = $ColorRect/CenterContainer
 const TYPING_LABEL = preload("res://gui/typing_label.tscn")
 
 func show_text(text: String):
