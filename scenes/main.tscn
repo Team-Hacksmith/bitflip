@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://baqa2j6l2ouj4"]
+[gd_scene load_steps=25 format=4 uid="uid://baqa2j6l2ouj4"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pdm61"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="2_m2y66"]
@@ -20,9 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://dewqft1c37kxv" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/18.png" id="16_ee865"]
 [ext_resource type="Texture2D" uid="uid://dr2jf0q27kjme" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/15.png" id="17_5miiq"]
 [ext_resource type="Texture2D" uid="uid://x30d3wq2lxik" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/4.png" id="17_x4msf"]
-[ext_resource type="PackedScene" uid="uid://toqia5r5q5tx" path="res://entities/start_timeline.tscn" id="21_4xv6b"]
+[ext_resource type="PackedScene" uid="uid://toqia5r5q5tx" path="res://entities/interactables/start_timeline.tscn" id="21_4xv6b"]
 [ext_resource type="Resource" path="res://dialogs/timelines/RoombaWakeUp.dtl" id="22_283es"]
-[ext_resource type="PackedScene" uid="uid://ld07dmcaibnu" path="res://entities/components/interactable.tscn" id="23_ubahl"]
+[ext_resource type="PackedScene" uid="uid://wevdjfcvru2r" path="res://entities/interactables/door.tscn" id="24_pwlwa"]
+[ext_resource type="PackedScene" uid="uid://6xogjk0a84ah" path="res://entities/interactables/interactable_btn.tscn" id="24_t6sc4"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_pdm61")
@@ -33,7 +34,6 @@ points = PackedVector2Array(808, 304, 1112, 304)
 default_color = Color(0.356863, 0.92549, 0.945098, 1)
 node_a = NodePath("LaserDevice")
 node_b = NodePath("LaserDevice2")
-is_on = false
 
 [node name="LaserDevice" parent="Laser" instance=ExtResource("3_w2d8q")]
 position = Vector2(808, 304)
@@ -84,8 +84,10 @@ centered = false
 position = Vector2(2371.5, 449)
 texture = ExtResource("3_8m150")
 
-[node name="Player" parent="." instance=ExtResource("2_m2y66")]
-position = Vector2(143, 187)
+[node name="Door" parent="." instance=ExtResource("24_pwlwa")]
+unique_name_in_owner = true
+position = Vector2(456, 192)
+default_is_open = true
 
 [node name="NightParallaxBackground" parent="." instance=ExtResource("3_2e5rv")]
 
@@ -145,7 +147,7 @@ tile_set = ExtResource("9_ptb0h")
 metadata/_edit_lock_ = true
 
 [node name="Cat" parent="." node_paths=PackedStringArray("position_markers_parent") instance=ExtResource("10_v8vtv")]
-position = Vector2(293, 187)
+position = Vector2(336, 152)
 position_markers_parent = NodePath("../CatMarkers")
 
 [node name="CatMarkers" type="Node2D" parent="."]
@@ -162,7 +164,12 @@ position = Vector2(2393, 584)
 [node name="StartTimeline" parent="." instance=ExtResource("21_4xv6b")]
 position = Vector2(576, 216)
 timeline = ExtResource("22_283es")
-only_once = true
 
-[node name="Interactable" parent="." instance=ExtResource("23_ubahl")]
-position = Vector2(400, 176)
+[node name="OpenDoorInteractableBtn" parent="." instance=ExtResource("24_t6sc4")]
+position = Vector2(336, 192)
+
+[node name="Player" parent="." instance=ExtResource("2_m2y66")]
+position = Vector2(143, 187)
+
+[connection signal="btn_pressed" from="OpenDoorInteractableBtn" to="." method="_on_open_door_interactable_btn_btn_pressed"]
+[connection signal="btn_released" from="OpenDoorInteractableBtn" to="." method="_on_open_door_interactable_btn_btn_released"]

@@ -10,9 +10,6 @@ extends CharacterBody2D
 @onready var coyote_timer = $CoyoteTimer
 @onready var jump_buffer_timer = $JumpBufferTimer
 @onready var jump_height_timer = $JumpHeightTimer
-@onready var antennae: Node2D = $Antennae
-@onready var antenna_target1: Marker2D = $Sprite2D/Antennae/AntennaTarget1
-@onready var antenna_target2: Marker2D = $Sprite2D/Antennae/AntennaTarget2
 @onready var tire_smoke_left: CPUParticles2D = $TireSmoke
 @onready var tire_smoke_right: CPUParticles2D = $TireSmoke2
 
@@ -34,8 +31,6 @@ func _physics_process(delta):
 	
 	var was_on_floor = is_on_floor()
 	velocity.x *= friction
-	antenna_target1.position.x = remap(velocity.x, -speed, speed, 2, -2)
-	antenna_target2.position.x = remap(velocity.x, -speed, speed, 2, -2)
 	move_and_slide()
 	
 	# Started to fall
@@ -122,5 +117,4 @@ func stop_tire_smoke():
 
 func switch_direction(horizontal_direction):
 	#sprite.flip_h = (horizontal_direction == -1)
-	#antennae.scale.x = horizontal_direction
 	sprite.position.x = horizontal_direction * 4
