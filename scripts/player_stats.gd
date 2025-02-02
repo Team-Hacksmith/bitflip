@@ -20,17 +20,17 @@ signal dead
 
 @export var abilities: Abilities = preload("res://resources/default_player_abilities.tres")
 
-func add_part(part: Global.BrokenParts):
+func add_part(part: Global.BrokenParts, run_timeline: bool = true):
 	if part in parts_obtained:
 		return 
 	else:
 		parts_obtained.push_back(part)
 		match part:
 			Global.BrokenParts.WHEEL:
-				Dialogic.start("SpeedFound")
+				if run_timeline: Dialogic.start("SpeedFound")
 				abilities.speed = true
 			Global.BrokenParts.SPRING:
-				Dialogic.start("JumpFound")
+				if run_timeline: Dialogic.start("JumpFound")
 				abilities.jump = true
 			Global.BrokenParts.GUN:
 				abilities.gun = true

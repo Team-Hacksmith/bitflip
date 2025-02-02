@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=4 uid="uid://daa2xefulcga4"]
 
-[ext_resource type="Script" path="res://scripts/chapter1.gd" id="1_8sa6l"]
+[ext_resource type="Script" path="res://scripts/chapter2.gd" id="1_vhuic"]
 [ext_resource type="PackedScene" uid="uid://bal5enltwdq06" path="res://entities/night_parallax_background.tscn" id="2_sb3kt"]
 [ext_resource type="Texture2D" uid="uid://bdqbhwawevyea" path="res://assets/Power-Station-Free-Tileset-Pixel-Art/3 Objects/3 Power lines/2.png" id="3_oqrfb"]
 [ext_resource type="Texture2D" uid="uid://duu4jb5yckyu3" path="res://assets/Power-Station-Free-Tileset-Pixel-Art/3 Objects/3 Power lines/1.png" id="4_qijel"]
@@ -26,8 +26,8 @@ size = Vector2(92, 100)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dx3s0"]
 size = Vector2(609, 278)
 
-[node name="Chapter1" type="Node2D"]
-script = ExtResource("1_8sa6l")
+[node name="Chapter2" type="Node2D"]
+script = ExtResource("1_vhuic")
 
 [node name="NightParallaxBackground" parent="." instance=ExtResource("2_sb3kt")]
 

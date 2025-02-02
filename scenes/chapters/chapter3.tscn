@@ -1,6 +1,6 @@
 [gd_scene load_steps=56 format=4 uid="uid://cp62k8b6dm0mx"]
 
-[ext_resource type="Script" path="res://scripts/chapter2.gd" id="1_gthe0"]
+[ext_resource type="Script" path="res://scripts/chapter3.gd" id="1_4ccoe"]
 [ext_resource type="PackedScene" uid="uid://bal5enltwdq06" path="res://entities/night_parallax_background.tscn" id="2_3cul0"]
 [ext_resource type="Texture2D" uid="uid://d02evfp3l2eg0" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/3.png" id="3_r7b63"]
 [ext_resource type="TileSet" uid="uid://cyyg6ih6cfuo2" path="res://resources/ground_tileset.tres" id="3_trw62"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="9_0nhtm"]
 [ext_resource type="Texture2D" uid="uid://brfclaauuha0w" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/14.png" id="9_uscs2"]
 [ext_resource type="Texture2D" uid="uid://xb8ulw1608l2" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/5.png" id="10_n4s4s"]
-[ext_resource type="PackedScene" path="res://entities/interactables/StaticSpikeSet.tscn" id="10_qg3mx"]
+[ext_resource type="PackedScene" uid="uid://ddjtdttgd11jv" path="res://entities/interactables/StaticSpikeSet.tscn" id="10_qg3mx"]
 [ext_resource type="Texture2D" uid="uid://885j674o007r" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/1.png" id="11_6khle"]
 [ext_resource type="PackedScene" uid="uid://cfl3p38sse3o" path="res://entities/laser.tscn" id="11_ymlrn"]
 [ext_resource type="Texture2D" uid="uid://dxmvrarv0l2t6" path="res://assets/AbandonedCity_Assets_Glerf/Clock_Moss.png" id="12_6xlj5"]
@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://clgbuqj0ebd4b" path="res://entities/interactables/hidden_spikes.tscn" id="15_01ktr"]
 [ext_resource type="Texture2D" uid="uid://fsum0udp1bbi" path="res://assets/AbandonedCity_Assets_Glerf/Trash_BlueCan.png" id="15_ed1ii"]
 [ext_resource type="Texture2D" uid="uid://vcfleivsq8rm" path="res://assets/AbandonedCity_Assets_Glerf/VendingMachine_Moss.png" id="16_4bgfh"]
-[ext_resource type="PackedScene" path="res://entities/moving_platform.tscn" id="16_kkxf2"]
+[ext_resource type="PackedScene" uid="uid://yaf7jlyqs22w" path="res://entities/moving_platform.tscn" id="16_kkxf2"]
 [ext_resource type="Texture2D" uid="uid://bim57cpvm7egp" path="res://assets/AbandonedCity_Assets_Glerf/StopSign_WGrass_Flower.png" id="17_c1br5"]
 [ext_resource type="Texture2D" uid="uid://daiibwf8hbh0v" path="res://assets/AbandonedCity_Assets_Glerf/StopSign_WGrass_NoFlower.png" id="18_rcbli"]
 [ext_resource type="Texture2D" uid="uid://dauvxbhbkl2or" path="res://assets/AbandonedCity_Assets_Glerf/Map_Moss.png" id="19_gxn5n"]
@@ -42,6 +42,21 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qr46d"]
 size = Vector2(619, 278)
+
+[sub_resource type="Animation" id="Animation_rkuww"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3587, -12)]
+}
 
 [sub_resource type="Animation" id="Animation_eogxw"]
 resource_name = "horizontal"
@@ -60,7 +75,13 @@ tracks/0/keys = {
 "values": [Vector2(3587, -12), Vector2(3847, -12)]
 }
 
-[sub_resource type="Animation" id="Animation_rkuww"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ba8a"]
+_data = {
+"RESET": SubResource("Animation_rkuww"),
+"horizontal": SubResource("Animation_eogxw")
+}
+
+[sub_resource type="Animation" id="Animation_v0cgv"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -72,13 +93,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3587, -12)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ba8a"]
-_data = {
-"RESET": SubResource("Animation_rkuww"),
-"horizontal": SubResource("Animation_eogxw")
+"values": [Vector2(4430, -97)]
 }
 
 [sub_resource type="Animation" id="Animation_4n4sj"]
@@ -99,7 +114,13 @@ tracks/0/keys = {
 "values": [Vector2(4430, -77), Vector2(4430, -472.403)]
 }
 
-[sub_resource type="Animation" id="Animation_v0cgv"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_piwa1"]
+_data = {
+"RESET": SubResource("Animation_v0cgv"),
+"vertical level 1": SubResource("Animation_4n4sj")
+}
+
+[sub_resource type="Animation" id="Animation_w4lyj"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -111,13 +132,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(4430, -97)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_piwa1"]
-_data = {
-"RESET": SubResource("Animation_v0cgv"),
-"vertical level 1": SubResource("Animation_4n4sj")
+"values": [Vector2(4808, -847)]
 }
 
 [sub_resource type="Animation" id="Animation_2pixg"]
@@ -136,21 +151,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 2,
 "values": [Vector2(5215, -875), Vector2(5215, -1740)]
-}
-
-[sub_resource type="Animation" id="Animation_w4lyj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(4808, -847)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ag8l7"]

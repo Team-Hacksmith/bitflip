@@ -79,8 +79,6 @@ func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		if keep_updating_laser_for_debug:
 			_update_laser()
-	else:
-		print(is_on)
 
 func _get_configuration_warnings():
 	var warnings = []
