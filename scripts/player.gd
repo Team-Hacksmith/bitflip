@@ -27,7 +27,7 @@ func _ready() -> void:
 	stats.health = 100
 	Global.player_stats = stats
 	Global.player = self
-	activate_abilities()
+	apply_abilities()
 	stats.dead.connect(_on_player_dead)
 
 func _physics_process(delta):
@@ -62,7 +62,7 @@ func _physics_process(delta):
 	handle_pushing(delta)
 
 
-func activate_abilities():
+func apply_abilities():
 	if stats.abilities.speed:
 		speed = stats.abilities.max_speed
 	else:
@@ -75,6 +75,13 @@ func activate_abilities():
 	
 	if stats.abilities.gun:
 		pass
+		
+	if not stats.abilities.speed:
+		sprite.frame = 0
+	elif not stats.abilities.jump:
+		sprite.frame = 1
+	elif not stats.abilities.gun:
+		sprite.frame = 2
 	print(speed, jump_force)
 	
 	

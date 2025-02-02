@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Global="*res://scripts/globals/global.gd"
+Bus="*res://scripts/globals/bus.gd"
 
 [dialogic]
 

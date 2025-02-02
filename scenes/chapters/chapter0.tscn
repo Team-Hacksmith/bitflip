@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://6xogjk0a84ah" path="res://entities/interactables/interactable_btn.tscn" id="8_5psj6"]
 [ext_resource type="PackedScene" uid="uid://cfl3p38sse3o" path="res://entities/laser.tscn" id="9_qjfn4"]
 [ext_resource type="PackedScene" uid="uid://ct382erafv84u" path="res://entities/laser_device.tscn" id="10_fb5mm"]
-[ext_resource type="PackedScene" uid="uid://cp2db0yuyqgqp" path="res://entities/interactables/hidden_spikes.tscn" id="11_sh2d5"]
+[ext_resource type="PackedScene" uid="uid://clgbuqj0ebd4b" path="res://entities/interactables/hidden_spikes.tscn" id="11_sh2d5"]
 [ext_resource type="PackedScene" uid="uid://yaf7jlyqs22w" path="res://entities/moving_platform.tscn" id="12_ioigh"]
 [ext_resource type="PackedScene" uid="uid://dxy15nkc8v5xa" path="res://entities/interactables/broken_part.tscn" id="13_okum3"]
 [ext_resource type="Texture2D" uid="uid://bf4wix23usii5" path="res://assets/wheel.png" id="14_6xxu8"]

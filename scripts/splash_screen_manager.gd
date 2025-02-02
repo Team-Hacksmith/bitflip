@@ -28,8 +28,10 @@ func fade_in() -> void:
 func _ready() -> void:
 	fade_in()
 	pass
-	
+
+var is_done = false
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_pressed():
+	if event.is_pressed() and not is_done:
+		is_done = true
 		await Global.game_controller.change_to_chapter_safe(start_chapter)
 	
