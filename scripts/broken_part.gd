@@ -17,5 +17,5 @@ func _on_texture_changed(tex: Texture2D):
 func _on_interactable_interact(with: Node2D) -> void:
 	#print(Global.player_stats.abilities.speed)
 	Global.player_stats.add_part(part)
-	Global.player.activate_abilities()
+	Global.player.apply_abilities()
 	queue_free()
