@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://daa2xefulcga4"]
+[gd_scene load_steps=20 format=4 uid="uid://daa2xefulcga4"]
 
 [ext_resource type="Script" path="res://scripts/chapter1.gd" id="1_lvu8y"]
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="2_3bgus"]
@@ -8,12 +8,16 @@
 [ext_resource type="Texture2D" uid="uid://dauvxbhbkl2or" path="res://assets/AbandonedCity_Assets_Glerf/Map_Moss.png" id="6_7ckxh"]
 [ext_resource type="Texture2D" uid="uid://dwhofegvxf2sh" path="res://assets/AbandonedCity_Assets_Glerf/Flowers_Assorted.png" id="7_mn7ne"]
 [ext_resource type="TileSet" uid="uid://cyyg6ih6cfuo2" path="res://resources/ground_tileset.tres" id="8_cjfht"]
+[ext_resource type="Texture2D" uid="uid://vayho3pmovn6" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/11.png" id="9_7uq44"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="9_026rg"]
 [ext_resource type="PackedScene" uid="uid://bo5aiheasph7x" path="res://entities/cat.tscn" id="10_awciy"]
+[ext_resource type="Texture2D" uid="uid://dyqtqf04cghq1" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/8.png" id="10_feyxo"]
 [ext_resource type="PackedScene" uid="uid://cfl3p38sse3o" path="res://entities/laser.tscn" id="11_q7brj"]
 [ext_resource type="PackedScene" uid="uid://ct382erafv84u" path="res://entities/laser_device.tscn" id="12_n5ig4"]
 [ext_resource type="Texture2D" uid="uid://dxmvrarv0l2t6" path="res://assets/AbandonedCity_Assets_Glerf/Clock_Moss.png" id="13_0uppd"]
-[ext_resource type="PackedScene" uid="uid://bqbd4mr86rhti" path="res://entities/interactables/level_changer.tscn" id="14_gbvnf"]
+[ext_resource type="PackedScene" path="res://entities/interactables/level_changer.tscn" id="14_gbvnf"]
+[ext_resource type="PackedScene" uid="uid://toqia5r5q5tx" path="res://entities/interactables/start_timeline.tscn" id="17_orbd3"]
+[ext_resource type="Resource" path="res://dialogs/timelines/RoombaWakeUp.dtl" id="18_ue58s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eobc7"]
 size = Vector2(92, 100)
@@ -80,6 +84,22 @@ texture = ExtResource("7_mn7ne")
 [node name="ClockMoss" type="Sprite2D" parent="props"]
 position = Vector2(1474, 639)
 texture = ExtResource("13_0uppd")
+
+[node name="11" type="Sprite2D" parent="props"]
+position = Vector2(1116, 594)
+texture = ExtResource("9_7uq44")
+
+[node name="12" type="Sprite2D" parent="props"]
+position = Vector2(1611, 628)
+texture = ExtResource("9_7uq44")
+
+[node name="9" type="Sprite2D" parent="props"]
+position = Vector2(1872, 884)
+texture = ExtResource("10_feyxo")
+
+[node name="10" type="Sprite2D" parent="props"]
+position = Vector2(1567, 632)
+texture = ExtResource("10_feyxo")
 
 [node name="Ground2" type="TileMapLayer" parent="."]
 position = Vector2(29, 134)
@@ -149,3 +169,7 @@ chapter_num = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChanger"]
 position = Vector2(-29, 0)
 shape = SubResource("RectangleShape2D_eobc7")
+
+[node name="StartTimeline" parent="." instance=ExtResource("17_orbd3")]
+position = Vector2(1933, 921)
+timeline = ExtResource("18_ue58s")
