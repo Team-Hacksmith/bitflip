@@ -1,8 +1,8 @@
-join Cat right [animation="Bounce In"]
+join Cat rightmost [animation="Bounce In"]
 Cat (anger): *purr* *purrrr*
 Cat (interact): *meowwww*
 leave Cat [animation="Bounce Out"]
-join roomba left [animation="Bounce In"]
+join roomba leftmost [animation="Bounce In"]
 roomba: What is this?
 roomba: Is this a part?
 roomba: Wait what!!! I can Speak!! Or maybe think?
