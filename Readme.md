@@ -1,6 +1,5 @@
-# **[Game Name]**  
-
-### **A Futuristic Chase with a Haunting Truth**  
+# **BitFlip**  
+  
 
 ## **Overview**  
 _In the distant future, few creatures remain._  
@@ -11,4 +10,4 @@ Will you fix yourself... or will you uncover a truth too devastating to fix?
 ## **Development**  
 
 🔧 **Built with:** Godot Engine  
-🎨 **Assets:** Royalty-free assets used from itch.io  
+🎨 **Assets:** Royalty-free assets used from itch.io

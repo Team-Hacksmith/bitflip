@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://b3icm6oc8aite"]
+[gd_scene load_steps=23 format=4 uid="uid://b3icm6oc8aite"]
 
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="2_3bgus"]
 [ext_resource type="TileSet" uid="uid://cyyg6ih6cfuo2" path="res://resources/ground_tileset.tres" id="8_cjfht"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dt8gc6g5giurx" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/12.png" id="15_3b402"]
 [ext_resource type="Texture2D" uid="uid://bkjjmyqxpwgng" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/2.png" id="16_u8b2a"]
 [ext_resource type="PackedScene" uid="uid://toqia5r5q5tx" path="res://entities/interactables/start_timeline.tscn" id="17_orbd3"]
+[ext_resource type="Texture2D" uid="uid://dxiie0w7x8vn0" path="res://assets/AbandonedCity_Assets_Glerf/StopSign_Flowers_Moss.png" id="17_vdew4"]
 [ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="19_mx3tj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfods"]
@@ -158,3 +159,7 @@ texture = ExtResource("15_3b402")
 z_index = -1
 position = Vector2(857, 93)
 texture = ExtResource("16_u8b2a")
+
+[node name="StopSignFlowersMoss" type="Sprite2D" parent="Props"]
+position = Vector2(677, 134)
+texture = ExtResource("17_vdew4")
