@@ -29,8 +29,10 @@ directories/dch_directory={
 "roomba": "res://dialogs/characters/roomba.dch"
 }
 directories/dtl_directory={
+"JumpFound": "res://dialogs/timelines/abilities/JumpFound.dtl",
 "JumpingItemFound": "res://dialogs/timelines/JumpingItemFound.dtl",
-"RoombaWakeUp": "res://dialogs/timelines/RoombaWakeUp.dtl"
+"RoombaWakeUp": "res://dialogs/timelines/RoombaWakeUp.dtl",
+"SpeedFound": "res://dialogs/timelines/abilities/SpeedFound.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

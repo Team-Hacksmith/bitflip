@@ -1,9 +1,10 @@
+class_name Player
 extends CharacterBody2D
 
-@export var speed = 30
+var speed: int = 0
 @export var friction = 0.9
 @export var gravity = 10
-@export var jump_force = 300
+var jump_force: int = 0
 # This represents the player's inertia.
 @export var push_force = 200
 @export var default_stats: PlayerStats = preload("res://resources/default_player_stats.tres") 
@@ -25,6 +26,8 @@ var stats: PlayerStats = default_stats
 func _ready() -> void:
 	stats.health = 100
 	Global.player_stats = stats
+	Global.player = self
+	activate_abilities()
 	stats.dead.connect(_on_player_dead)
 
 func _physics_process(delta):
@@ -57,6 +60,22 @@ func _physics_process(delta):
 	move_and_slide()
 	# Handle pushing objects
 	handle_pushing(delta)
+
+
+func activate_abilities():
+	if stats.abilities.speed:
+		speed = stats.abilities.max_speed
+	else:
+		speed = stats.abilities.min_speed
+	
+	if stats.abilities.jump:
+		jump_force = stats.abilities.jump_force
+	else:
+		jump_force = 0
+	
+	if stats.abilities.gun:
+		pass
+	print(speed, jump_force)
 	
 	
 func handle_pushing(delta):

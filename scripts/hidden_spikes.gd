@@ -36,8 +36,6 @@ func _on_state_change(state: SpikeState):
 			$DeadZone.disabled = false
 			timer.wait_time = hidden_time
 
-func _process(delta: float) -> void:
-	print(state)
 
 func _on_timer_timeout() -> void:
 	if state == SpikeState.HIDDEN:

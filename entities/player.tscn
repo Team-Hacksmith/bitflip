@@ -61,7 +61,6 @@ collision_mask = 138
 platform_on_leave = 1
 script = ExtResource("1_wvd2u")
 gravity = 20
-jump_force = 400
 
 [node name="Antenna" parent="." instance=ExtResource("3_xmfgn")]
 position = Vector2(-13, -10)
