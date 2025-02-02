@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cfsiyu56shvuj"]
+[gd_scene load_steps=14 format=4 uid="uid://cfsiyu56shvuj"]
 
 [ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="1_1rdpy"]
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="1_6q1re"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://6xogjk0a84ah" path="res://entities/interactables/interactable_btn.tscn" id="8_5psj6"]
 [ext_resource type="PackedScene" uid="uid://cfl3p38sse3o" path="res://entities/laser.tscn" id="9_qjfn4"]
 [ext_resource type="PackedScene" uid="uid://ct382erafv84u" path="res://entities/laser_device.tscn" id="10_fb5mm"]
+[ext_resource type="PackedScene" uid="uid://cp2db0yuyqgqp" path="res://entities/interactables/hidden_spikes.tscn" id="11_sh2d5"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_47vdd"]
 
@@ -74,5 +75,8 @@ rotation = 3.14159
 [node name="LaserDevice2" parent="Laser" instance=ExtResource("10_fb5mm")]
 position = Vector2(212, 66)
 rotation = 0.0
+
+[node name="HiddenSpikes" parent="." instance=ExtResource("11_sh2d5")]
+position = Vector2(544, 160)
 
 [connection signal="player_hit" from="Laser" to="Player" method="die"]
