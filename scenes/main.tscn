@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://baqa2j6l2ouj4"]
+[gd_scene load_steps=26 format=4 uid="uid://baqa2j6l2ouj4"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pdm61"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="2_m2y66"]
@@ -24,6 +24,7 @@
 [ext_resource type="Resource" path="res://dialogs/timelines/RoombaWakeUp.dtl" id="22_283es"]
 [ext_resource type="PackedScene" uid="uid://wevdjfcvru2r" path="res://entities/interactables/door.tscn" id="24_pwlwa"]
 [ext_resource type="PackedScene" uid="uid://6xogjk0a84ah" path="res://entities/interactables/interactable_btn.tscn" id="24_t6sc4"]
+[ext_resource type="PackedScene" uid="uid://bewj4wafjf3eh" path="res://entities/interactables/moveable_box.tscn" id="25_5urq2"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_pdm61")
@@ -147,7 +148,7 @@ tile_set = ExtResource("9_ptb0h")
 metadata/_edit_lock_ = true
 
 [node name="Cat" parent="." node_paths=PackedStringArray("position_markers_parent") instance=ExtResource("10_v8vtv")]
-position = Vector2(336, 152)
+position = Vector2(448, 104)
 position_markers_parent = NodePath("../CatMarkers")
 
 [node name="CatMarkers" type="Node2D" parent="."]
@@ -170,6 +171,9 @@ position = Vector2(336, 192)
 
 [node name="Player" parent="." instance=ExtResource("2_m2y66")]
 position = Vector2(143, 187)
+
+[node name="MoveableBox" parent="." instance=ExtResource("25_5urq2")]
+position = Vector2(336, 120)
 
 [connection signal="btn_pressed" from="OpenDoorInteractableBtn" to="." method="_on_open_door_interactable_btn_btn_pressed"]
 [connection signal="btn_released" from="OpenDoorInteractableBtn" to="." method="_on_open_door_interactable_btn_btn_released"]

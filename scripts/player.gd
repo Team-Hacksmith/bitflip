@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var friction = 0.9
 @export var gravity = 10
 @export var jump_force = 300
+# This represents the player's inertia.
+@export var push_force = 200
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
@@ -17,7 +19,9 @@ var can_coyote_jump = false
 var jump_buffered = false
 var is_disabled = false
 
+
 func _physics_process(delta):
+			
 	# Disabling player movement when dialogic timeline is active
 	is_disabled = Dialogic.current_timeline != null
 	
@@ -31,7 +35,6 @@ func _physics_process(delta):
 	
 	var was_on_floor = is_on_floor()
 	velocity.x *= friction
-	move_and_slide()
 	
 	# Started to fall
 	if was_on_floor && !is_on_floor() && velocity.y >= 0:
@@ -46,7 +49,22 @@ func _physics_process(delta):
 			jump()
 	
 	update_animations(horizontal_direction)
+	move_and_slide()
+	# Handle pushing objects
+	handle_pushing(delta)
 	
+func handle_pushing(delta):
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		var collider = c.get_collider()
+		if collider is CharacterBody2D and collider.is_in_group("moveable"):
+			var obj: Moveable = collider
+			#var push_velocity = velocity * delta  # Factor in the character's velocity
+			var push_strength = push_force + velocity.x * 10  # Scale force based on velocity
+			obj.velocity.x = -c.get_normal().x * push_strength
+			#collider.velocity.x = velocity.x
+			#print(c.get_normal())
+			
 func handle_inputs(horizontal_direction: float):
 	if is_disabled: return
 	if Input.is_action_just_pressed("jump"):
