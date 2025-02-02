@@ -1,6 +1,6 @@
 extends Control
 
-@export var load_scene : PackedScene
+@export_file("*.tscn") var load_scene: String
 @export var in_time : float = 0.5
 @export var fade_in_time : float = 1.0
 @export var pause_time : float = 1.5
@@ -31,5 +31,5 @@ func _ready() -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_pressed():
-		await Global.game_controller.change_scene("res://scenes/chapters/chapter0.tscn", false)
+		await Global.game_controller.change_scene(load_scene, false)
 	

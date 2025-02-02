@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=4 uid="uid://cfsiyu56shvuj"]
+[gd_scene load_steps=7 format=4 uid="uid://cfsiyu56shvuj"]
 
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="1_6q1re"]
 [ext_resource type="TileSet" uid="uid://cyyg6ih6cfuo2" path="res://resources/ground_tileset.tres" id="2_o2c8e"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="3_6rrym"]
 [ext_resource type="PackedScene" uid="uid://bo5aiheasph7x" path="res://entities/cat.tscn" id="4_owat2"]
+[ext_resource type="PackedScene" uid="uid://bqbd4mr86rhti" path="res://entities/interactables/level_changer.tscn" id="5_1gy0j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl3yj"]
+size = Vector2(181, 114)
 
 [node name="Chapter0" type="Node2D"]
 
@@ -27,3 +31,10 @@ position = Vector2(194, 141)
 
 [node name="1" type="Marker2D" parent="CatMarkers"]
 position = Vector2(553, 144)
+
+[node name="LevelChanger" parent="." instance=ExtResource("5_1gy0j")]
+position = Vector2(485, 103)
+scene = "res://scenes/chapters/chapter1.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChanger"]
+shape = SubResource("RectangleShape2D_xl3yj")

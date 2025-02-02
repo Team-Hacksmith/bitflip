@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn8s85mfuejl4"]
+[gd_scene load_steps=4 format=3 uid="uid://eqs53nnssio7"]
 
 [ext_resource type="Script" path="res://scripts/globals/game_controller.gd" id="1_jxpow"]
 [ext_resource type="PackedScene" uid="uid://bl3hgbwo0ee3b" path="res://gui/splash_screen_manager.tscn" id="2_ksg8s"]
@@ -23,6 +23,7 @@ grow_vertical = 2
 
 [node name="SplashScreenManager" parent="UILayer/GUI" instance=ExtResource("2_ksg8s")]
 layout_mode = 1
+load_scene = "res://scenes/chapters/chapter1.tscn"
 
 [node name="TransitionController" parent="UILayer" instance=ExtResource("3_m24m2")]
 unique_name_in_owner = true
