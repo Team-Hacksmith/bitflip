@@ -58,6 +58,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.909509, 1, 1, 1, 0.776435, 1, 1
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 138
+platform_on_leave = 1
 script = ExtResource("1_wvd2u")
 gravity = 20
 jump_force = 400
