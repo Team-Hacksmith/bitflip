@@ -22,7 +22,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"Cat": "res://dialogs/characters/Cat.dch"
+"Cat": "res://dialogs/characters/Cat.dch",
+"roomba": "res://dialogs/characters/roomba.dch"
 }
 directories/dtl_directory={
 "JumpingItemFound": "res://dialogs/timelines/JumpingItemFound.dtl",

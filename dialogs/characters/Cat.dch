@@ -15,6 +15,15 @@
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
+"anger": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://dialogs/characters/portraits/cat_portrait.tscn"
+},
 "idle": {
 "export_overrides": {
 "image": ""
@@ -43,6 +52,15 @@
 "scene": "res://dialogs/characters/portraits/cat_portrait.tscn"
 },
 "idle_side": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://dialogs/characters/portraits/cat_portrait.tscn"
+},
+"interact": {
 "export_overrides": {
 "image": ""
 },

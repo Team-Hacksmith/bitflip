@@ -1,6 +1,11 @@
 [background fade="0.0"]
 *Slurp* *Slurp*
 join Cat (idle_lick) rightmost [mirrored="true"]
-Cat: *Purr* *Slurpp*
+Cat (anger): *Slurpp* *Purr*
+leave Cat [mirrored="true"]
+join roomba left [animation="Bounce In"]
+roomba: *beep* *boop*
+leave roomba [animation="Bounce In"]
+join Cat (idle_itch) rightmost [mirrored="true"]
 Cat (idle_itch): *Purrr*
 [end_timeline]
