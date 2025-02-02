@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn8s85mfuejl4"]
+
+[ext_resource type="Script" path="res://scripts/globals/game_controller.gd" id="1_jxpow"]
+[ext_resource type="PackedScene" uid="uid://bl3hgbwo0ee3b" path="res://gui/splash_screen_manager.tscn" id="2_ksg8s"]
+[ext_resource type="PackedScene" uid="uid://cr0jdtuxo03ae" path="res://gui/transition_controller.tscn" id="3_m24m2"]
+
+[node name="GameController" type="Node"]
+script = ExtResource("1_jxpow")
+
+[node name="World" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" type="Control" parent="UILayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SplashScreenManager" parent="UILayer/GUI" instance=ExtResource("2_ksg8s")]
+layout_mode = 1
+
+[node name="TransitionController" parent="UILayer" instance=ExtResource("3_m24m2")]
+unique_name_in_owner = true
