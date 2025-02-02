@@ -118,7 +118,7 @@ position = Vector2(852, 146)
 
 [node name="LevelChanger" parent="." instance=ExtResource("14_gbvnf")]
 position = Vector2(527, 112)
-chapter_num = 1
+chapter_num = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChanger"]
 position = Vector2(426, 19)

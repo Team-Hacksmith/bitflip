@@ -167,7 +167,7 @@ rotation = -1.5708
 
 [node name="LevelChanger" parent="." instance=ExtResource("16_o0bd3")]
 position = Vector2(2321, 823)
-chapter_num = 2
+chapter_num = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChanger"]
 position = Vector2(-115, 1)
