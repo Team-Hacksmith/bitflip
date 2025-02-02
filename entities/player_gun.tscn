@@ -1,0 +1,120 @@
+[gd_scene load_steps=17 format=3 uid="uid://bladc8gaeqw34"]
+
+[ext_resource type="Script" path="res://scripts/player_gun.gd" id="1_26r34"]
+[ext_resource type="Texture2D" uid="uid://cryhymyn2ye1g" path="res://assets/gun.png" id="2_3gg0w"]
+[ext_resource type="Texture2D" uid="uid://u4wlngyemoyf" path="res://assets/Free Smoke Fx  Pixel 06.png" id="4_6q5al"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1obhc"]
+atlas = ExtResource("4_6q5al")
+region = Rect2(0, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfaf0"]
+atlas = ExtResource("4_6q5al")
+region = Rect2(64, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0aimh"]
+atlas = ExtResource("4_6q5al")
+region = Rect2(128, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5eh2"]
+atlas = ExtResource("4_6q5al")
+region = Rect2(192, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4t2j"]
+atlas = ExtResource("4_6q5al")
+region = Rect2(256, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w246x"]
+atlas = ExtResource("4_6q5al")
+region = Rect2(320, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7gxd"]
+atlas = ExtResource("4_6q5al")
+region = Rect2(384, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k7o8"]
+atlas = ExtResource("4_6q5al")
+region = Rect2(448, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1if8c"]
+atlas = ExtResource("4_6q5al")
+region = Rect2(512, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkte4"]
+atlas = ExtResource("4_6q5al")
+region = Rect2(576, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fnjy"]
+atlas = ExtResource("4_6q5al")
+region = Rect2(640, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7maub"]
+atlas = ExtResource("4_6q5al")
+region = Rect2(704, 1280, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gyam7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1obhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfaf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0aimh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5eh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4t2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w246x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7gxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0k7o8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1if8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkte4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fnjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7maub")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="PlayerGun" type="Node2D"]
+script = ExtResource("1_26r34")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.785397
+texture = ExtResource("2_3gg0w")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="BulletPoint" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(9, -3)
+
+[node name="Smoke" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(32, -8)
+rotation = 0.708527
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_gyam7")
+frame = 11
+frame_progress = 1.0
+flip_h = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cu8j7xbaxo1f6"]
+[gd_scene load_steps=16 format=3 uid="uid://cu8j7xbaxo1f6"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wvd2u"]
 [ext_resource type="PackedScene" uid="uid://4j8xxnjrm5pq" path="res://entities/antenna.tscn" id="3_xmfgn"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://jw4i1kj15dj4" path="res://assets/plauer_sprite.png" id="5_lv4yh"]
 [ext_resource type="PackedScene" path="res://entities/tire_smoke.tscn" id="6_l3pon"]
 [ext_resource type="Texture2D" uid="uid://dx7wsgkaqsltb" path="res://assets/particle.png" id="7_8g5t7"]
+[ext_resource type="PackedScene" uid="uid://bladc8gaeqw34" path="res://entities/player_gun.tscn" id="8_yqlej"]
+[ext_resource type="PackedScene" uid="uid://do0fr47embl5" path="res://entities/bullet.tscn" id="9_xvi2y"]
 
 [sub_resource type="Animation" id="Animation_tmp8v"]
 length = 0.001
@@ -214,6 +216,11 @@ initial_velocity_max = 375.66
 scale_amount_min = 0.3
 scale_amount_max = 0.7
 color_ramp = SubResource("Gradient_eqo4e")
+
+[node name="PlayerGun" parent="." instance=ExtResource("8_yqlej")]
+unique_name_in_owner = true
+position = Vector2(8, -16)
+bullet_scene = ExtResource("9_xvi2y")
 
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="timeout" from="JumpBufferTimer" to="." method="_on_jump_buffer_timer_timeout"]

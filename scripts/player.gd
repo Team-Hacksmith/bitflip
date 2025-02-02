@@ -77,7 +77,11 @@ func apply_abilities():
 		jump_force = 0
 	
 	if agun:
-		pass
+		%PlayerGun.show()
+		%PlayerGun.can_shoot = true
+	else:
+		%PlayerGun.can_shoot = false
+		%PlayerGun.hide()
 		
 	if not aspeed:
 		sprite.frame = 0
@@ -182,4 +186,5 @@ func _on_player_dead():
 	sprite.queue_free()
 	$CollisionShape2D.queue_free()
 	$CollisionShape2D2.queue_free()
+	$PlayerGun.queue_free()
 	dead_particles.emitting = true

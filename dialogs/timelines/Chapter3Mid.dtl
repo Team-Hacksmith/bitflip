@@ -1,0 +1,15 @@
+human1: We don't have time—just do it!
+human2: It’s not responding…"
+join roomba leftmost
+Cat:  *MrrrOW?!*
+roomba: SYSTEM LOG\: FORCE SHUTDOWN INITIATED. PROCESSING...
+human2: ..shouldn't have let it—
+join Cat rightmost
+Cat: *Prrrt*
+leave Cat
+roomba: Me Roomba… was turned off? Why?
+leave roomba
+join Cat rightmost
+Cat: *Meow*
+leave Cat
+[end_timeline]

@@ -30,6 +30,9 @@ directories/dch_directory={
 "roomba": "res://dialogs/characters/roomba.dch"
 }
 directories/dtl_directory={
+"Chapter2Init": "res://dialogs/timelines/Chapter2Init.dtl",
+"Chapter3Init": "res://dialogs/timelines/Chapter3Init.dtl",
+"Chapter3Mid": "res://dialogs/timelines/Chapter3Mid.dtl",
 "GunFound": "res://dialogs/timelines/abilities/GunFound.dtl",
 "JumpFound": "res://dialogs/timelines/abilities/JumpFound.dtl",
 "JumpingItemFound": "res://dialogs/timelines/JumpingItemFound.dtl",
@@ -139,6 +142,7 @@ interact={
 2d_physics/layer_2="ground"
 2d_physics/layer_3="cat"
 2d_physics/layer_4="moveables"
+2d_physics/layer_5="bullets"
 2d_physics/layer_8="universal_interactables"
 
 [rendering]

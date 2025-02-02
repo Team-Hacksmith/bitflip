@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=4 uid="uid://cfsiyu56shvuj"]
+[gd_scene load_steps=26 format=4 uid="uid://cfsiyu56shvuj"]
 
 [ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="1_1rdpy"]
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="1_6q1re"]
+[ext_resource type="Script" path="res://scripts/chapter0.gd" id="1_fecoo"]
 [ext_resource type="TileSet" uid="uid://cyyg6ih6cfuo2" path="res://resources/ground_tileset.tres" id="2_o2c8e"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="3_6rrym"]
 [ext_resource type="PackedScene" uid="uid://bo5aiheasph7x" path="res://entities/cat.tscn" id="4_owat2"]
@@ -64,6 +65,7 @@ _data = {
 }
 
 [node name="Chapter0" type="Node2D"]
+script = ExtResource("1_fecoo")
 
 [node name="DeadZone" parent="." instance=ExtResource("1_1rdpy")]
 
@@ -104,7 +106,8 @@ shape = SubResource("RectangleShape2D_ii1w2")
 position = Vector2(552, 160)
 
 [node name="InteractableBtn" parent="." node_paths=PackedStringArray("trigger_object") instance=ExtResource("8_5psj6")]
-position = Vector2(304, 168)
+position = Vector2(408, 152)
+rotation = -1.57079
 trigger_object = NodePath("../Door")
 
 [node name="Laser" parent="." node_paths=PackedStringArray("node_a", "node_b") instance=ExtResource("9_qjfn4")]
