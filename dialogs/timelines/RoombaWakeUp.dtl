@@ -7,5 +7,5 @@ join roomba left [animation="Bounce In"]
 roomba: *beep* *boop*
 leave roomba [animation="Bounce In"]
 join Cat (idle_itch) rightmost [mirrored="true"]
-Cat (idle_itch): *Purrr*
+Cat (idle_itch): *MrrrrrOW!*
 [end_timeline]

@@ -27,11 +27,16 @@ Bus="*res://scripts/globals/bus.gd"
 
 directories/dch_directory={
 "Cat": "res://dialogs/characters/Cat.dch",
+"human1": "res://dialogs/characters/human1.dch",
+"human2": "res://dialogs/characters/human2.dch",
 "roomba": "res://dialogs/characters/roomba.dch"
 }
 directories/dtl_directory={
+"Chapter2Init": "res://dialogs/timelines/Chapter2Init.dtl",
+"Chapter3Init": "res://dialogs/timelines/Chapter3Init.dtl",
+"Chapter3Mid": "res://dialogs/timelines/Chapter3Mid.dtl",
+"GunFound": "res://dialogs/timelines/abilities/GunFound.dtl",
 "JumpFound": "res://dialogs/timelines/abilities/JumpFound.dtl",
-"JumpingItemFound": "res://dialogs/timelines/JumpingItemFound.dtl",
 "RoombaWakeUp": "res://dialogs/timelines/RoombaWakeUp.dtl",
 "SpeedFound": "res://dialogs/timelines/abilities/SpeedFound.dtl"
 }

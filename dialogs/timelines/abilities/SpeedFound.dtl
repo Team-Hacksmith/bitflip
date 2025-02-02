@@ -1,4 +1,8 @@
-join roomba leftmost
+join Cat (interact) rightmost
+Cat: *Prrrt* *Mrrow?*
+leave Cat
 roomba: Me Roomba found something!
+join roomba leftmost
 roomba: This looks like a wheely!?
 roomba: Me Roomba can now run fasty!!!
+leave roomba

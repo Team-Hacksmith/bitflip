@@ -1,12 +1,12 @@
-[gd_scene load_steps=23 format=4 uid="uid://b3icm6oc8aite"]
+[gd_scene load_steps=25 format=4 uid="uid://b3icm6oc8aite"]
 
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="2_3bgus"]
 [ext_resource type="TileSet" uid="uid://cyyg6ih6cfuo2" path="res://resources/ground_tileset.tres" id="8_cjfht"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="9_026rg"]
 [ext_resource type="PackedScene" uid="uid://bo5aiheasph7x" path="res://entities/cat.tscn" id="10_awciy"]
 [ext_resource type="Texture2D" uid="uid://dyqtqf04cghq1" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/8.png" id="10_feyxo"]
-[ext_resource type="Resource" path="res://dialogs/timelines/RoombaWakeUp.dtl" id="11_edk58"]
 [ext_resource type="PackedScene" uid="uid://clgbuqj0ebd4b" path="res://entities/interactables/hidden_spikes.tscn" id="11_ibun5"]
+[ext_resource type="Resource" path="res://dialogs/timelines/abilities/SpeedFound.dtl" id="11_it2ji"]
 [ext_resource type="PackedScene" uid="uid://cfl3p38sse3o" path="res://entities/laser.tscn" id="11_q7brj"]
 [ext_resource type="Texture2D" uid="uid://d2jrpwar4hy7p" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/6.png" id="12_7jnhw"]
 [ext_resource type="PackedScene" uid="uid://ct382erafv84u" path="res://entities/laser_device.tscn" id="12_n5ig4"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bkjjmyqxpwgng" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/2.png" id="16_u8b2a"]
 [ext_resource type="PackedScene" uid="uid://toqia5r5q5tx" path="res://entities/interactables/start_timeline.tscn" id="17_orbd3"]
 [ext_resource type="Texture2D" uid="uid://dxiie0w7x8vn0" path="res://assets/AbandonedCity_Assets_Glerf/StopSign_Flowers_Moss.png" id="17_vdew4"]
+[ext_resource type="PackedScene" path="res://entities/interactables/broken_part.tscn" id="18_5m0tj"]
+[ext_resource type="Texture2D" uid="uid://bf4wix23usii5" path="res://assets/wheel.png" id="19_0y78h"]
 [ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="19_mx3tj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfods"]
@@ -61,7 +63,7 @@ _data = {
 "platforms": SubResource("Animation_d833u")
 }
 
-[node name="Chapter0" type="Node2D"]
+[node name="Chapter1" type="Node2D"]
 
 [node name="DeadZone" parent="." instance=ExtResource("19_mx3tj")]
 
@@ -115,14 +117,14 @@ position_markers_parent = NodePath("../CatMarkers")
 position = Vector2(194, 141)
 
 [node name="1" type="Marker2D" parent="CatMarkers"]
-position = Vector2(852, 146)
+position = Vector2(882, 150)
 
 [node name="LevelChanger" parent="." instance=ExtResource("14_gbvnf")]
 position = Vector2(527, 112)
 chapter_num = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChanger"]
-position = Vector2(426, 19)
+position = Vector2(572, 21)
 shape = SubResource("RectangleShape2D_vtc3x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -131,10 +133,6 @@ libraries = {
 "": SubResource("AnimationLibrary_kgukr")
 }
 autoplay = "platforms"
-
-[node name="StartTimeline" parent="." instance=ExtResource("17_orbd3")]
-position = Vector2(850, 145)
-timeline = ExtResource("11_edk58")
 
 [node name="Props" type="Node" parent="."]
 
@@ -163,3 +161,14 @@ texture = ExtResource("16_u8b2a")
 [node name="StopSignFlowersMoss" type="Sprite2D" parent="Props"]
 position = Vector2(677, 134)
 texture = ExtResource("17_vdew4")
+
+[node name="StartTimeline" parent="." instance=ExtResource("17_orbd3")]
+position = Vector2(913, 144)
+timeline = ExtResource("11_it2ji")
+
+[node name="BrokenPart2" parent="." instance=ExtResource("18_5m0tj")]
+position = Vector2(913, 146)
+title = "Wheel"
+texture = ExtResource("19_0y78h")
+
+[connection signal="player_hit" from="Laser" to="Player" method="die"]

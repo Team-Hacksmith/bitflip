@@ -18,19 +18,22 @@ signal dead
 
 @export var parts_obtained: Array[Global.BrokenParts] = []
 
-@export var abilities: Abilities = preload("res://resources/default_player_abilities.tres")
+@export var min_speed: int = 20
+@export var max_speed: int = 30
+@export var max_jump_force: int = 400
+
+#@export var abilities: Abilities = preload("res://resources/default_player_abilities.tres")
 
 func add_part(part: Global.BrokenParts, run_timeline: bool = true):
 	if part in parts_obtained:
 		return 
-	else:
-		parts_obtained.push_back(part)
-		match part:
-			Global.BrokenParts.WHEEL:
-				if run_timeline: Dialogic.start("SpeedFound")
-				abilities.speed = true
-			Global.BrokenParts.SPRING:
-				if run_timeline: Dialogic.start("JumpFound")
-				abilities.jump = true
-			Global.BrokenParts.GUN:
-				abilities.gun = true
+	parts_obtained.push_back(part)
+		#match part:
+			#Global.BrokenParts.WHEEL:
+				#abilities.speed = true
+			#Global.BrokenParts.SPRING:
+				#abilities.jump = true
+			#Global.BrokenParts.GUN:
+				#abilities.gun = true
+	print("Added part: ", part)
+	print(parts_obtained)

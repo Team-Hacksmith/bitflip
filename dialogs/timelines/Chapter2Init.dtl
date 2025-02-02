@@ -1,0 +1,9 @@
+human1: Alright, little guy, let’s see what you’ve got!
+Cat: *Prrrt!* *Mew!*
+roomba: Me Roomba… was here before?
+human2: Look at it go! I swear, it’s obsessed with that cat.
+human1: Guess you like making friends, huh?
+join roomba leftmost
+roomba: Me Roomba… saw something? Me Roomba… had friends?
+leave roomba
+[end_timeline]
