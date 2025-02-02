@@ -43,7 +43,7 @@ signal player_hit
 var is_player_inside = false
 
 func _ready() -> void:
-	timer.wait_time = toggle_time + .2
+	timer.wait_time = toggle_time
 	_update_laser()
 	if not Engine.is_editor_hint():
 		_setup_collision()
@@ -76,8 +76,11 @@ func _setup_collision():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Engine.is_editor_hint() and keep_updating_laser_for_debug:
-		_update_laser()
+	if Engine.is_editor_hint():
+		if keep_updating_laser_for_debug:
+			_update_laser()
+	else:
+		print(is_on)
 
 func _get_configuration_warnings():
 	var warnings = []
