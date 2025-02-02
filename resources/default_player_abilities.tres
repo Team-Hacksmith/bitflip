@@ -4,3 +4,9 @@
 
 [resource]
 script = ExtResource("1_xdnoa")
+speed = false
+min_speed = 20
+max_speed = 30
+jump = false
+jump_force = 400
+gun = false
