@@ -24,7 +24,7 @@
 [ext_resource type="Resource" path="res://dialogs/timelines/RoombaWakeUp.dtl" id="22_283es"]
 [ext_resource type="PackedScene" uid="uid://wevdjfcvru2r" path="res://entities/interactables/door.tscn" id="24_pwlwa"]
 [ext_resource type="PackedScene" uid="uid://6xogjk0a84ah" path="res://entities/interactables/interactable_btn.tscn" id="24_t6sc4"]
-[ext_resource type="PackedScene" uid="uid://bewj4wafjf3eh" path="res://entities/interactables/moveable_box.tscn" id="25_5urq2"]
+[ext_resource type="PackedScene" path="res://entities/interactables/moveable_box.tscn" id="25_5urq2"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_pdm61")

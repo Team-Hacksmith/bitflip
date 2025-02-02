@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://cyyg6ih6cfuo2" path="res://resources/ground_tileset.tres" id="2_o2c8e"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="3_6rrym"]
 [ext_resource type="PackedScene" uid="uid://bo5aiheasph7x" path="res://entities/cat.tscn" id="4_owat2"]
-[ext_resource type="PackedScene" uid="uid://bqbd4mr86rhti" path="res://entities/interactables/level_changer.tscn" id="5_6ij0m"]
+[ext_resource type="PackedScene" path="res://entities/interactables/level_changer.tscn" id="5_6ij0m"]
 [ext_resource type="PackedScene" uid="uid://wevdjfcvru2r" path="res://entities/interactables/door.tscn" id="7_dyjvg"]
 [ext_resource type="PackedScene" uid="uid://6xogjk0a84ah" path="res://entities/interactables/interactable_btn.tscn" id="8_5psj6"]
 
