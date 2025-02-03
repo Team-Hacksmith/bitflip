@@ -52,7 +52,6 @@ mouse_filter = 2
 
 [node name="SplashScreenManager" parent="UILayer/GUI" instance=ExtResource("2_ksg8s")]
 layout_mode = 1
-start_chapter = 0
 
 [node name="TransitionController" parent="UILayer" instance=ExtResource("3_m24m2")]
 unique_name_in_owner = true
