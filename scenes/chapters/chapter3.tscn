@@ -386,6 +386,13 @@ position = Vector2(69, 185)
 position = Vector2(193, 181)
 position_markers_parent = NodePath("../CatMarkers")
 
+[node name="LevelChanger" parent="." instance=ExtResource("27_7cbyb")]
+position = Vector2(8224, -1544)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChanger"]
+position = Vector2(-8, 0)
+shape = SubResource("RectangleShape2D_x8tcb")
+
 [node name="CatMarkers" type="Node2D" parent="."]
 
 [node name="0" type="Marker2D" parent="CatMarkers"]
@@ -408,13 +415,6 @@ position = Vector2(6024, -1938)
 
 [node name="6" type="Marker2D" parent="CatMarkers"]
 position = Vector2(8166, -1518)
-
-[node name="LevelChanger" parent="CatMarkers" instance=ExtResource("27_7cbyb")]
-position = Vector2(8224, -1544)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CatMarkers/LevelChanger"]
-position = Vector2(-8, 0)
-shape = SubResource("RectangleShape2D_x8tcb")
 
 [node name="MoveableBox" parent="." instance=ExtResource("8_an1a3")]
 position = Vector2(3061, -286)
