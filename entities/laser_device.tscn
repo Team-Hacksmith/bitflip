@@ -42,5 +42,5 @@ animations = [{
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_ekvgm")
 autoplay = "default"
-frame_progress = 0.0846199
+frame_progress = 0.167035
 offset = Vector2(0, 6)

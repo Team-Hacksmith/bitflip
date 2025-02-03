@@ -2,8 +2,6 @@
 class_name Laser
 extends Line2D
 
-signal player_hit
-
 @export var node_a: Node2D:
 	set(new):
 		node_a = new
@@ -16,19 +14,15 @@ signal player_hit
 		update_configuration_warnings()
 		return new
 
-@export var is_on: bool = true:
-	set(new):
-		is_on = new
-		if not animation_player: return new
-		if is_on:
-			animation_player.play_backwards("turn_off")
-		else:
-			animation_player.play("turn_off")
+@export var is_on: bool = false
 			
-@export var time_based: bool = false
+#@export var time_based: bool = false
 @export var toggle_time := 4.0
+@export var on_time := 3.0
+@export var off_time := 3.0
 
 @export_group("Debug")
+@export var show_debug_label: bool = false
 @export var update_laser: bool:
 	set(new):
 		_update_laser()
@@ -38,15 +32,33 @@ signal player_hit
 
 @onready var timer: Timer = $Timer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var area_2d: Area2D = $Area2D
+@onready var debug_label: Label = %DebugLabel
+@onready var dead_zone: DeadZone = $DeadZone
 
 var is_player_inside = false
 
 func _ready() -> void:
-	timer.wait_time = toggle_time
+	timer.start(get_wait_time())
 	_update_laser()
 	if not Engine.is_editor_hint():
 		_setup_collision()
+
+func get_wait_time():
+	if is_on:
+		return on_time
+	else: 
+		return off_time
+
+func toggle_laser():
+	if is_on:
+		animation_player.play("turn_off")
+		await animation_player.animation_finished
+		is_on = false
+		dead_zone.disabled = true
+	else:
+		is_on = true
+		dead_zone.disabled = false
+		animation_player.play_backwards("turn_off")
 
 func _update_laser():
 	#print(node_a, node_b)
@@ -62,11 +74,16 @@ func _update_laser():
 		clear_points()
 		add_point(node_a.position)
 		add_point(node_b.position)
+	if show_debug_label:
+		debug_label.global_position = node_a.global_position
+		debug_label.show()
+	else:
+		debug_label.hide()
 
 func _setup_collision():
 	for i in points.size() - 1:
 		var new_shape = CollisionShape2D.new()
-		area_2d.add_child(new_shape)
+		dead_zone.add_child(new_shape)
 		var rect = RectangleShape2D.new()
 		new_shape.position = (points[i] + points[i + 1]) / 2
 		new_shape.rotation = points[i].direction_to(points[i + 1]).angle()
@@ -79,6 +96,8 @@ func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		if keep_updating_laser_for_debug:
 			_update_laser()
+	if show_debug_label:
+		debug_label.text = str(is_on) + "\n" + "%.2f" % timer.time_left
 
 func _get_configuration_warnings():
 	var warnings = []
@@ -90,20 +109,5 @@ func _get_configuration_warnings():
 
 
 func _on_timer_timeout() -> void:
-	is_on = !is_on
-	if is_player_inside and is_on:
-		player_hit.emit()
-		print("player already in laser")
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		is_player_inside = true
-		if is_on:
-			player_hit.emit()
-			print("player hit laser")
-
-
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		is_player_inside = false
+	await toggle_laser()
+	timer.start(get_wait_time())

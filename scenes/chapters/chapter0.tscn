@@ -112,17 +112,19 @@ trigger_object = NodePath("../Door")
 
 [node name="Laser" parent="." node_paths=PackedStringArray("node_a", "node_b") instance=ExtResource("9_qjfn4")]
 position = Vector2(252, 94)
-points = PackedVector2Array(436, 2, 436, 138)
+points = PackedVector2Array(92, -94, 92, 66)
 node_a = NodePath("LaserDevice")
 node_b = NodePath("LaserDevice2")
+on_time = 2.0
+off_time = 1.0
 keep_updating_laser_for_debug = true
 
 [node name="LaserDevice" parent="Laser" instance=ExtResource("10_fb5mm")]
-position = Vector2(436, 2)
+position = Vector2(92, -94)
 rotation = 3.14159
 
 [node name="LaserDevice2" parent="Laser" instance=ExtResource("10_fb5mm")]
-position = Vector2(436, 138)
+position = Vector2(92, 66)
 rotation = 0.0
 
 [node name="HiddenSpikes" parent="." instance=ExtResource("11_sh2d5")]
@@ -157,5 +159,3 @@ title = "Gun"
 part = 2
 texture = ExtResource("18_318lr")
 timeline = ExtResource("19_p1yi1")
-
-[connection signal="player_hit" from="Laser" to="Player" method="die"]

@@ -382,7 +382,7 @@ tile_map_data = PackedByteArray("AAAKAAkAAAABAAEAAAAKAAgAAAACAAEAAAAKAAcAAAABAAE
 tile_set = ExtResource("3_trw62")
 
 [node name="Player" parent="." instance=ExtResource("4_5yjsx")]
-position = Vector2(64, 176)
+position = Vector2(74, 178)
 
 [node name="Cat" parent="." node_paths=PackedStringArray("position_markers_parent") instance=ExtResource("5_r34in")]
 position = Vector2(193, 181)
@@ -438,19 +438,22 @@ shape = SubResource("RectangleShape2D_qr46d")
 
 [node name="Laser" parent="." node_paths=PackedStringArray("node_a", "node_b") instance=ExtResource("11_ymlrn")]
 position = Vector2(2377, -530)
-points = PackedVector2Array(885, 286, 1050, 287)
+points = PackedVector2Array(884, 286, 1050, 287)
 default_color = Color(0.356863, 0.92549, 0.945098, 1)
 node_a = NodePath("LaserDevice")
 node_b = NodePath("LaserDevice2")
-toggle_time = 6.0
+on_time = 4.0
+off_time = 4.0
 keep_updating_laser_for_debug = true
 
 [node name="LaserDevice" parent="Laser" instance=ExtResource("12_fnok4")]
-position = Vector2(885, 286)
+position = Vector2(884, 286)
 
 [node name="LaserDevice2" parent="Laser" instance=ExtResource("12_fnok4")]
 position = Vector2(1050, 287)
 rotation = -1.5708
+frame = 1
+frame_progress = 0.477152
 
 [node name="MovingPlatform" parent="." instance=ExtResource("16_kkxf2")]
 position = Vector2(3587, -12)
@@ -666,5 +669,3 @@ bus = &"Music"
 [node name="StartTimeline" parent="." instance=ExtResource("13_ufgmh")]
 position = Vector2(8104, -1536)
 timeline = ExtResource("44_jrbl7")
-
-[connection signal="player_hit" from="Laser" to="Player" method="die"]

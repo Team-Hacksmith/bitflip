@@ -67,96 +67,42 @@ gravity = 20
 [node name="Antenna" parent="." instance=ExtResource("3_xmfgn")]
 position = Vector2(-13, -10)
 node_a = NodePath("..")
-node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Player/Antenna/AntennaSegment0")
+node_b = NodePath("")
 segments = 5
 
-[node name="AntennaSegment0" type="RigidBody2D" parent="Antenna" instance=ExtResource("4_ijx4n")]
-collision_layer = 0
-collision_mask = 0
-mass = 2.0
-gravity_scale = -2.0
-linear_damp = 3.0
-angular_damp = 2.0
+[node name="AntennaSegment2" parent="Antenna" instance=ExtResource("4_ijx4n")]
 
-[node name="AntennaSegment1" type="RigidBody2D" parent="Antenna" instance=ExtResource("4_ijx4n")]
+[node name="AntennaSegment3" parent="Antenna" instance=ExtResource("4_ijx4n")]
 position = Vector2(0, -4)
-collision_layer = 0
-collision_mask = 0
-mass = 2.0
-gravity_scale = -2.0
-linear_damp = 3.0
-angular_damp = 2.0
 
-[node name="AntennaJoint1" type="PinJoint2D" parent="Antenna" instance=ExtResource("5_ge647")]
-modulate = Color(0, 0.566825, 0.333748, 0.32549)
+[node name="AntennaJoint2" parent="Antenna" instance=ExtResource("5_ge647")]
 position = Vector2(0, -4)
-scale = Vector2(0.163377, 0.163377)
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Player/Antenna/AntennaSegment0")
 node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Player/Antenna/AntennaSegment1")
-bias = 0.155
-angular_limit_lower = -0.785398
-angular_limit_upper = 0.785398
-motor_enabled = true
 
-[node name="AntennaSegment2" type="RigidBody2D" parent="Antenna" instance=ExtResource("4_ijx4n")]
+[node name="AntennaSegment4" parent="Antenna" instance=ExtResource("4_ijx4n")]
 position = Vector2(0, -8)
-collision_layer = 0
-collision_mask = 0
-mass = 2.0
-gravity_scale = -2.0
-linear_damp = 3.0
-angular_damp = 2.0
 
-[node name="AntennaJoint2" type="PinJoint2D" parent="Antenna" instance=ExtResource("5_ge647")]
-modulate = Color(0, 0.566825, 0.333748, 0.32549)
+[node name="AntennaJoint3" parent="Antenna" instance=ExtResource("5_ge647")]
 position = Vector2(0, -8)
-scale = Vector2(0.163377, 0.163377)
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Player/Antenna/AntennaSegment1")
 node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Player/Antenna/AntennaSegment2")
-bias = 0.155
-angular_limit_lower = -0.785398
-angular_limit_upper = 0.785398
-motor_enabled = true
 
-[node name="AntennaSegment3" type="RigidBody2D" parent="Antenna" instance=ExtResource("4_ijx4n")]
+[node name="AntennaSegment5" parent="Antenna" instance=ExtResource("4_ijx4n")]
 position = Vector2(0, -12)
-collision_layer = 0
-collision_mask = 0
-mass = 2.0
-gravity_scale = -2.0
-linear_damp = 3.0
-angular_damp = 2.0
 
-[node name="AntennaJoint3" type="PinJoint2D" parent="Antenna" instance=ExtResource("5_ge647")]
-modulate = Color(0, 0.566825, 0.333748, 0.32549)
+[node name="AntennaJoint4" parent="Antenna" instance=ExtResource("5_ge647")]
 position = Vector2(0, -12)
-scale = Vector2(0.163377, 0.163377)
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Player/Antenna/AntennaSegment2")
 node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Player/Antenna/AntennaSegment3")
-bias = 0.155
-angular_limit_lower = -0.785398
-angular_limit_upper = 0.785398
-motor_enabled = true
 
-[node name="AntennaSegment4" type="RigidBody2D" parent="Antenna" instance=ExtResource("4_ijx4n")]
+[node name="AntennaSegment6" parent="Antenna" instance=ExtResource("4_ijx4n")]
 position = Vector2(0, -16)
-collision_layer = 0
-collision_mask = 0
-mass = 2.0
-gravity_scale = -2.0
-linear_damp = 3.0
-angular_damp = 2.0
 
-[node name="AntennaJoint4" type="PinJoint2D" parent="Antenna" instance=ExtResource("5_ge647")]
-modulate = Color(0, 0.566825, 0.333748, 0.32549)
+[node name="AntennaJoint5" parent="Antenna" instance=ExtResource("5_ge647")]
 position = Vector2(0, -16)
-scale = Vector2(0.163377, 0.163377)
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Player/Antenna/AntennaSegment3")
 node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Player/Antenna/AntennaSegment4")
-bias = 0.155
-angular_limit_lower = -0.785398
-angular_limit_upper = 0.785398
-motor_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -15)

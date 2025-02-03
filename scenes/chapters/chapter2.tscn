@@ -141,19 +141,20 @@ position = Vector2(2429, 857)
 
 [node name="Laser2" parent="." node_paths=PackedStringArray("node_a", "node_b") instance=ExtResource("11_t0jt6")]
 position = Vector2(-48, 16)
-points = PackedVector2Array(1836, 694, 2031, 693)
+points = PackedVector2Array(1834, 694, 2032, 693)
 default_color = Color(0.356863, 0.92549, 0.945098, 1)
 node_a = NodePath("LaserDevice3")
 node_b = NodePath("LaserDevice4")
-time_based = true
 toggle_time = 1.0
+on_time = 2.0
+off_time = 2.0
 keep_updating_laser_for_debug = true
 
 [node name="LaserDevice3" parent="Laser2" instance=ExtResource("12_pfh4y")]
-position = Vector2(1836, 694)
+position = Vector2(1834, 694)
 
 [node name="LaserDevice4" parent="Laser2" instance=ExtResource("12_pfh4y")]
-position = Vector2(2031, 693)
+position = Vector2(2032, 693)
 rotation = -1.5708
 
 [node name="LevelChanger" parent="." instance=ExtResource("16_o0bd3")]
@@ -197,5 +198,3 @@ position = Vector2(776, 480)
 
 [node name="StaticSpike4" parent="." instance=ExtResource("22_qb7og")]
 position = Vector2(840, 544)
-
-[connection signal="player_hit" from="Laser2" to="Player" method="die"]

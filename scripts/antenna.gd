@@ -18,6 +18,10 @@ extends Joint2D
 const ANTENNA_SEGMENT = preload("res://entities/antenna_segment.tscn")
 const ANTENNA_JOINT = preload("res://entities/antenna_joint.tscn")
 
+func _ready() -> void:
+	if not Engine.is_editor_hint():
+		_refresh()
+
 func _refresh():
 	clear_segments()
 	create_antenna()
@@ -63,7 +67,3 @@ func clear_segments():
 	for n in get_children():
 		remove_child(n)
 		n.queue_free()
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	_refresh()
