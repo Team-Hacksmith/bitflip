@@ -184,8 +184,12 @@ func die():
 	stats.health = 0
 
 func _on_player_dead():
+	dead_particles.emitting = true
+	if Global.last_checkpoint:
+		global_position = Global.last_checkpoint
+		stats.health = 100
+		return
 	sprite.queue_free()
 	$CollisionShape2D.queue_free()
 	$CollisionShape2D2.queue_free()
 	$PlayerGun.queue_free()
-	dead_particles.emitting = true

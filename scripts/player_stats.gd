@@ -14,7 +14,8 @@ signal dead
 		health = clamp(new, 0, 100)
 		if health == 0:
 			dead.emit()
-			Global.game_controller.change_gui_scene("res://gui/game_over.tscn")
+			if not Global.last_checkpoint:
+				Global.game_controller.change_gui_scene("res://gui/game_over.tscn")
 
 @export var parts_obtained: Array[Global.BrokenParts] = []
 

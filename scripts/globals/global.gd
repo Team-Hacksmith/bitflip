@@ -3,6 +3,7 @@ extends Node
 var game_controller: GameController
 var player_stats: PlayerStats
 var player: Player
+var last_checkpoint: Vector2
 
 enum BrokenParts {
 	WHEEL,

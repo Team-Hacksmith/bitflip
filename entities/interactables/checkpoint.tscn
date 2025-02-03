@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dks3wvjd2ipoq"]
+
+[ext_resource type="Script" path="res://scripts/checkpoint.gd" id="1_llsly"]
+[ext_resource type="Texture2D" uid="uid://43v4ip6mk6yu" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Other/Pointer1.png" id="2_vdwgg"]
+[ext_resource type="PackedScene" uid="uid://ld07dmcaibnu" path="res://entities/components/interactable.tscn" id="3_rhnh6"]
+
+[node name="Checkpoint" type="Node2D"]
+script = ExtResource("1_llsly")
+
+[node name="Pointer1" type="Sprite2D" parent="."]
+position = Vector2(0, -21)
+texture = ExtResource("2_vdwgg")
+
+[node name="Interactable" parent="." instance=ExtResource("3_rhnh6")]
+position = Vector2(0, -32)
+only_once = true
+
+[connection signal="interact" from="Interactable" to="." method="_on_interactable_interact"]
