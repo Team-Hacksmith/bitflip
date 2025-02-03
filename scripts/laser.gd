@@ -16,8 +16,6 @@ extends Line2D
 
 @export var is_on: bool = false
 			
-#@export var time_based: bool = false
-@export var toggle_time := 4.0
 @export var on_time := 3.0
 @export var off_time := 3.0
 
