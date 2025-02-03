@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://ld07dmcaibnu"]
 
 [ext_resource type="Script" path="res://scripts/interactable.gd" id="1_64edv"]
-[ext_resource type="Theme" uid="uid://l7axbibprpe" path="res://resources/ui_theme.tres" id="2_mc856"]
+[ext_resource type="Theme" uid="uid://dhtr7jec27kra" path="res://resources/ui_theme.tres" id="2_mc856"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xx6hn"]
-size = Vector2(32, 30)
+size = Vector2(64, 64)
 
 [sub_resource type="Animation" id="Animation_ancp4"]
 length = 0.001

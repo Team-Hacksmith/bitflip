@@ -16,9 +16,10 @@ var can_shoot = true
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
-		_shoot()
+		#shoot()
+		pass
 
-func _shoot():
+func shoot():
 	if not can_shoot: return
 	if not bullet_scene:
 		return

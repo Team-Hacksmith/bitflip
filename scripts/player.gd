@@ -17,6 +17,7 @@ var jump_force: int = 0
 @onready var tire_smoke_left: CPUParticles2D = $TireSmoke
 @onready var tire_smoke_right: CPUParticles2D = $TireSmoke2
 @onready var dead_particles: CPUParticles2D = %DeadParticles
+@onready var player_gun = %PlayerGun
 
 var can_coyote_jump = false
 var jump_buffered = false
@@ -77,11 +78,11 @@ func apply_abilities():
 		jump_force = 0
 	
 	if agun:
-		%PlayerGun.show()
-		%PlayerGun.can_shoot = true
+		player_gun.show()
+		player_gun.can_shoot = true
 	else:
-		%PlayerGun.can_shoot = false
-		%PlayerGun.hide()
+		player_gun.can_shoot = false
+		player_gun.hide()
 		
 	if not aspeed:
 		sprite.frame = 0

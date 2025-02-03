@@ -1,10 +1,12 @@
-[gd_scene load_steps=25 format=4 uid="uid://b3icm6oc8aite"]
+[gd_scene load_steps=27 format=4 uid="uid://b3icm6oc8aite"]
 
+[ext_resource type="PackedScene" uid="uid://wenc6mb4dw48" path="res://entities/autoplay_timeline.tscn" id="1_d3v53"]
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="2_3bgus"]
 [ext_resource type="TileSet" uid="uid://cyyg6ih6cfuo2" path="res://resources/ground_tileset.tres" id="8_cjfht"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="9_026rg"]
 [ext_resource type="PackedScene" uid="uid://bo5aiheasph7x" path="res://entities/cat.tscn" id="10_awciy"]
 [ext_resource type="Texture2D" uid="uid://dyqtqf04cghq1" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/8.png" id="10_feyxo"]
+[ext_resource type="Resource" path="res://dialogs/timelines/RoombaWakeUp.dtl" id="11_edk58"]
 [ext_resource type="PackedScene" uid="uid://clgbuqj0ebd4b" path="res://entities/interactables/hidden_spikes.tscn" id="11_ibun5"]
 [ext_resource type="PackedScene" uid="uid://cfl3p38sse3o" path="res://entities/laser.tscn" id="11_q7brj"]
 [ext_resource type="Texture2D" uid="uid://d2jrpwar4hy7p" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/6.png" id="12_7jnhw"]
@@ -64,6 +66,9 @@ _data = {
 }
 
 [node name="Chapter1" type="Node2D"]
+
+[node name="AutoplayTimeline" parent="." instance=ExtResource("1_d3v53")]
+timeline = ExtResource("11_edk58")
 
 [node name="DeadZone" parent="." instance=ExtResource("19_mx3tj")]
 

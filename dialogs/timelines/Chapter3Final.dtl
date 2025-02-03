@@ -1,0 +1,12 @@
+[style name="Blacked2"]
+roomba: I remember... everything.
+roomba: I… I was supposed to protect… but I failed.
+roomba: No... no! I didn't mean to hurt you.
+roomba: I… I was broken from the start.
+[wait time="1.0"]
+[sound path="res://assets/music/rifle-gunshot-99749.mp3" volume="0.0" bus="Music"]
+do Global.kill_cat()
+[wait time="1.0"]
+roomba: I didn’t want this. I didn’t mean… to kill you.
+roomba: No matter what... I am broken. Forever.
+do Global.game_end()

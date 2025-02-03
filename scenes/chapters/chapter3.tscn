@@ -1,7 +1,9 @@
-[gd_scene load_steps=57 format=4 uid="uid://cp62k8b6dm0mx"]
+[gd_scene load_steps=58 format=4 uid="uid://cp62k8b6dm0mx"]
 
 [ext_resource type="Script" path="res://scripts/chapter3.gd" id="1_0mkuq"]
 [ext_resource type="PackedScene" uid="uid://bal5enltwdq06" path="res://entities/night_parallax_background.tscn" id="2_3cul0"]
+[ext_resource type="PackedScene" uid="uid://wenc6mb4dw48" path="res://entities/autoplay_timeline.tscn" id="2_5al20"]
+[ext_resource type="Resource" path="res://dialogs/timelines/Chapter3Init.dtl" id="3_8mkec"]
 [ext_resource type="Texture2D" uid="uid://d02evfp3l2eg0" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/3.png" id="3_r7b63"]
 [ext_resource type="TileSet" uid="uid://cyyg6ih6cfuo2" path="res://resources/ground_tileset.tres" id="3_trw62"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="4_5yjsx"]
@@ -36,15 +38,12 @@
 [ext_resource type="Texture2D" uid="uid://dt8gc6g5giurx" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/12.png" id="21_g5h77"]
 [ext_resource type="Texture2D" uid="uid://dyqtqf04cghq1" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/8.png" id="22_3nq7m"]
 [ext_resource type="Texture2D" uid="uid://d2jrpwar4hy7p" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/6.png" id="23_f20r1"]
-[ext_resource type="PackedScene" uid="uid://bqbd4mr86rhti" path="res://entities/interactables/level_changer.tscn" id="27_7cbyb"]
 [ext_resource type="Resource" path="res://dialogs/timelines/Chapter3Mid.dtl" id="37_lqmfd"]
 [ext_resource type="AudioStream" uid="uid://bgglmteavce0x" path="res://assets/music/neon-skies-200323.mp3" id="38_dscax"]
 [ext_resource type="PackedScene" uid="uid://dxy15nkc8v5xa" path="res://entities/interactables/broken_part.tscn" id="40_g7m10"]
 [ext_resource type="Texture2D" uid="uid://cryhymyn2ye1g" path="res://assets/gun.png" id="41_7rvpa"]
 [ext_resource type="Resource" path="res://dialogs/timelines/abilities/GunFound.dtl" id="42_21tls"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8tcb"]
-size = Vector2(224, 112)
+[ext_resource type="Resource" path="res://dialogs/timelines/Chapter3Final.dtl" id="44_jrbl7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qr46d"]
 size = Vector2(619, 278)
@@ -258,6 +257,9 @@ _data = {
 [node name="Chapter3" type="Node2D"]
 script = ExtResource("1_0mkuq")
 
+[node name="AutoplayTimeline" parent="." instance=ExtResource("2_5al20")]
+timeline = ExtResource("3_8mkec")
+
 [node name="NightParallaxBackground" parent="." instance=ExtResource("2_3cul0")]
 
 [node name="props" type="Node2D" parent="."]
@@ -380,18 +382,11 @@ tile_map_data = PackedByteArray("AAAKAAkAAAABAAEAAAAKAAgAAAACAAEAAAAKAAcAAAABAAE
 tile_set = ExtResource("3_trw62")
 
 [node name="Player" parent="." instance=ExtResource("4_5yjsx")]
-position = Vector2(69, 185)
+position = Vector2(64, 176)
 
 [node name="Cat" parent="." node_paths=PackedStringArray("position_markers_parent") instance=ExtResource("5_r34in")]
 position = Vector2(193, 181)
 position_markers_parent = NodePath("../CatMarkers")
-
-[node name="LevelChanger" parent="." instance=ExtResource("27_7cbyb")]
-position = Vector2(8224, -1544)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelChanger"]
-position = Vector2(-8, 0)
-shape = SubResource("RectangleShape2D_x8tcb")
 
 [node name="CatMarkers" type="Node2D" parent="."]
 
@@ -667,5 +662,9 @@ timeline = ExtResource("42_21tls")
 stream = ExtResource("38_dscax")
 autoplay = true
 bus = &"Music"
+
+[node name="StartTimeline" parent="." instance=ExtResource("13_ufgmh")]
+position = Vector2(8104, -1536)
+timeline = ExtResource("44_jrbl7")
 
 [connection signal="player_hit" from="Laser" to="Player" method="die"]

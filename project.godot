@@ -32,6 +32,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Chapter2Init": "res://dialogs/timelines/Chapter2Init.dtl",
+"Chapter3Final": "res://dialogs/timelines/Chapter3Final.dtl",
 "Chapter3Init": "res://dialogs/timelines/Chapter3Init.dtl",
 "Chapter3Mid": "res://dialogs/timelines/Chapter3Mid.dtl",
 "GunFound": "res://dialogs/timelines/abilities/GunFound.dtl",
@@ -62,7 +63,7 @@ audio/max_channels=4.0
 portraits/default_portrait=""
 text/autopauses={}
 variables={}
-layout/style_list=["res://dialogs/styles/BasicPixelVN.tres"]
+layout/style_list=["res://dialogs/styles/BasicPixelVN.tres", "res://dialogs/styles/Blacked2.tres"]
 layout/default_style="res://dialogs/styles/BasicPixelVN.tres"
 glossary/default_case_sensitive=true
 

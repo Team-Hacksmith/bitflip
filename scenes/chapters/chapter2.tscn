@@ -1,7 +1,9 @@
-[gd_scene load_steps=24 format=4 uid="uid://daa2xefulcga4"]
+[gd_scene load_steps=27 format=4 uid="uid://daa2xefulcga4"]
 
 [ext_resource type="Script" path="res://scripts/chapter2.gd" id="1_vhuic"]
+[ext_resource type="PackedScene" uid="uid://wenc6mb4dw48" path="res://entities/autoplay_timeline.tscn" id="2_5lrs0"]
 [ext_resource type="PackedScene" uid="uid://bal5enltwdq06" path="res://entities/night_parallax_background.tscn" id="2_sb3kt"]
+[ext_resource type="Resource" path="res://dialogs/timelines/Chapter2Init.dtl" id="3_dneka"]
 [ext_resource type="Texture2D" uid="uid://bdqbhwawevyea" path="res://assets/Power-Station-Free-Tileset-Pixel-Art/3 Objects/3 Power lines/2.png" id="3_oqrfb"]
 [ext_resource type="Texture2D" uid="uid://duu4jb5yckyu3" path="res://assets/Power-Station-Free-Tileset-Pixel-Art/3 Objects/3 Power lines/1.png" id="4_qijel"]
 [ext_resource type="Texture2D" uid="uid://bdm2ws1lwbqcr" path="res://assets/Power-Station-Free-Tileset-Pixel-Art/3 Objects/3 Power lines/4.png" id="5_iw8kk"]
@@ -21,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bey2jwsjjeatq" path="res://assets/spring.png" id="19_neaj6"]
 [ext_resource type="Resource" path="res://dialogs/timelines/abilities/JumpFound.dtl" id="20_8dsnk"]
 [ext_resource type="AudioStream" uid="uid://bmits61vg6mnl" path="res://assets/music/i-have-no-regrets-in-my-life-274012.mp3" id="21_gecld"]
+[ext_resource type="PackedScene" uid="uid://cx8ega5l44cjj" path="res://entities/StaticSpike.tscn" id="22_qb7og"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eobc7"]
 size = Vector2(92, 100)
@@ -30,6 +33,9 @@ size = Vector2(609, 278)
 
 [node name="Chapter2" type="Node2D"]
 script = ExtResource("1_vhuic")
+
+[node name="AutoplayTimeline" parent="." instance=ExtResource("2_5lrs0")]
+timeline = ExtResource("3_dneka")
 
 [node name="NightParallaxBackground" parent="." instance=ExtResource("2_sb3kt")]
 
@@ -133,23 +139,6 @@ position = Vector2(1934, 920)
 [node name="3" type="Marker2D" parent="CatMarkers"]
 position = Vector2(2429, 857)
 
-[node name="Laser1" parent="." node_paths=PackedStringArray("node_a", "node_b") instance=ExtResource("11_t0jt6")]
-position = Vector2(-48, 16)
-points = PackedVector2Array(810, 394, 1137, 390)
-default_color = Color(0.356863, 0.92549, 0.945098, 1)
-node_a = NodePath("LaserDevice")
-node_b = NodePath("LaserDevice2")
-time_based = true
-keep_updating_laser_for_debug = true
-
-[node name="LaserDevice" parent="Laser1" instance=ExtResource("12_pfh4y")]
-position = Vector2(810, 394)
-scale = Vector2(0.999999, 1)
-
-[node name="LaserDevice2" parent="Laser1" instance=ExtResource("12_pfh4y")]
-position = Vector2(1137, 390)
-rotation = -1.5708
-
 [node name="Laser2" parent="." node_paths=PackedStringArray("node_a", "node_b") instance=ExtResource("11_t0jt6")]
 position = Vector2(-48, 16)
 points = PackedVector2Array(1836, 694, 2031, 693)
@@ -197,5 +186,16 @@ stream = ExtResource("21_gecld")
 autoplay = true
 bus = &"Music"
 
-[connection signal="player_hit" from="Laser1" to="Player" method="die"]
+[node name="StaticSpike" parent="." instance=ExtResource("22_qb7og")]
+position = Vector2(712, 384)
+
+[node name="StaticSpike2" parent="." instance=ExtResource("22_qb7og")]
+position = Vector2(744, 416)
+
+[node name="StaticSpike3" parent="." instance=ExtResource("22_qb7og")]
+position = Vector2(776, 480)
+
+[node name="StaticSpike4" parent="." instance=ExtResource("22_qb7og")]
+position = Vector2(840, 544)
+
 [connection signal="player_hit" from="Laser2" to="Player" method="die"]

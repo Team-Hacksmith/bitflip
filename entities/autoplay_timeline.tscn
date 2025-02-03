@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://wenc6mb4dw48"]
+
+[ext_resource type="Script" path="res://scripts/autoplay_timeline.gd" id="1_tujrw"]
+
+[node name="AutoplayTimeline" type="Node"]
+script = ExtResource("1_tujrw")
