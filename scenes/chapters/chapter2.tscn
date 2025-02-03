@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://daa2xefulcga4"]
+[gd_scene load_steps=24 format=4 uid="uid://daa2xefulcga4"]
 
 [ext_resource type="Script" path="res://scripts/chapter2.gd" id="1_vhuic"]
 [ext_resource type="PackedScene" uid="uid://bal5enltwdq06" path="res://entities/night_parallax_background.tscn" id="2_sb3kt"]
@@ -16,9 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://dyqtqf04cghq1" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/8.png" id="10_upw5u"]
 [ext_resource type="PackedScene" uid="uid://cfl3p38sse3o" path="res://entities/laser.tscn" id="11_t0jt6"]
 [ext_resource type="PackedScene" uid="uid://ct382erafv84u" path="res://entities/laser_device.tscn" id="12_pfh4y"]
-[ext_resource type="PackedScene" uid="uid://toqia5r5q5tx" path="res://entities/interactables/start_timeline.tscn" id="13_3p8d4"]
 [ext_resource type="PackedScene" uid="uid://bqbd4mr86rhti" path="res://entities/interactables/level_changer.tscn" id="16_o0bd3"]
-[ext_resource type="Resource" path="res://dialogs/timelines/JumpingItemFound.dtl" id="18_qqkcr"]
+[ext_resource type="PackedScene" uid="uid://dxy15nkc8v5xa" path="res://entities/interactables/broken_part.tscn" id="18_os3v0"]
+[ext_resource type="Texture2D" uid="uid://bey2jwsjjeatq" path="res://assets/spring.png" id="19_neaj6"]
+[ext_resource type="Resource" path="res://dialogs/timelines/abilities/JumpFound.dtl" id="20_8dsnk"]
+[ext_resource type="AudioStream" uid="uid://bmits61vg6mnl" path="res://assets/music/i-have-no-regrets-in-my-life-274012.mp3" id="21_gecld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eobc7"]
 size = Vector2(92, 100)
@@ -173,10 +175,6 @@ chapter_num = 3
 position = Vector2(-115, 1)
 shape = SubResource("RectangleShape2D_eobc7")
 
-[node name="StartTimeline" parent="." instance=ExtResource("13_3p8d4")]
-position = Vector2(1933, 921)
-timeline = ExtResource("18_qqkcr")
-
 [node name="DeadZone" parent="." instance=ExtResource("9_sjkqs")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
@@ -186,6 +184,18 @@ shape = SubResource("RectangleShape2D_dx3s0")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DeadZone"]
 position = Vector2(2672, 1068)
 shape = SubResource("RectangleShape2D_dx3s0")
+
+[node name="BrokenPart" parent="." instance=ExtResource("18_os3v0")]
+position = Vector2(1936, 920)
+title = "Spring"
+part = 1
+texture = ExtResource("19_neaj6")
+timeline = ExtResource("20_8dsnk")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_gecld")
+autoplay = true
+bus = &"Music"
 
 [connection signal="player_hit" from="Laser1" to="Player" method="die"]
 [connection signal="player_hit" from="Laser2" to="Player" method="die"]

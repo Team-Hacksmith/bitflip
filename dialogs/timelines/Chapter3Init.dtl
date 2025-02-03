@@ -1,12 +1,12 @@
-human1: Alright, let’s see how high you can go!
-human2: It’s learning fast. Look—it saw the cat do it, and now it wants to try!
+Human1: Alright, let’s see how high you can go!
+Human1: It’s learning fast. Look—it saw the cat do it, and now it wants to try!
 join roomba leftmost
 roomba: Me Roomba… jumps?
-human1: See? It adapts. It observes, and then it—
-human2: It’s not just copying… it’s thinking. 
+Human1: See? It adapts. It observes, and then it—
+Human1: It’s not just copying… it’s thinking.
 join Cat rightmost
 Cat: *MrrrOW!*
 leave Cat
-roomba:  Me Roomba… was good at things? Me Roomba… was trusted?
+roomba: Me Roomba… was good at things? Me Roomba… was trusted?
 leave roomba
 [end_timeline]

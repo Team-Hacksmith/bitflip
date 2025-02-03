@@ -1,9 +1,9 @@
-human1: We don't have time—just do it!
-human2: It’s not responding…"
+Human1: We don't have time—just do it!
+Human1: It’s not responding…"
 join roomba leftmost
-Cat:  *MrrrOW?!*
+Cat: *MrrrOW?!*
 roomba: SYSTEM LOG\: FORCE SHUTDOWN INITIATED. PROCESSING...
-human2: ..shouldn't have let it—
+Human1: ..shouldn't have let it—
 join Cat rightmost
 Cat: *Prrrt*
 leave Cat

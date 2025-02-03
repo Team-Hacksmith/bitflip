@@ -1,11 +1,10 @@
-[gd_scene load_steps=23 format=4 uid="uid://b3icm6oc8aite"]
+[gd_scene load_steps=25 format=4 uid="uid://b3icm6oc8aite"]
 
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="2_3bgus"]
 [ext_resource type="TileSet" uid="uid://cyyg6ih6cfuo2" path="res://resources/ground_tileset.tres" id="8_cjfht"]
 [ext_resource type="PackedScene" uid="uid://cu8j7xbaxo1f6" path="res://entities/player.tscn" id="9_026rg"]
 [ext_resource type="PackedScene" uid="uid://bo5aiheasph7x" path="res://entities/cat.tscn" id="10_awciy"]
 [ext_resource type="Texture2D" uid="uid://dyqtqf04cghq1" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/8.png" id="10_feyxo"]
-[ext_resource type="Resource" path="res://dialogs/timelines/RoombaWakeUp.dtl" id="11_edk58"]
 [ext_resource type="PackedScene" uid="uid://clgbuqj0ebd4b" path="res://entities/interactables/hidden_spikes.tscn" id="11_ibun5"]
 [ext_resource type="PackedScene" uid="uid://cfl3p38sse3o" path="res://entities/laser.tscn" id="11_q7brj"]
 [ext_resource type="Texture2D" uid="uid://d2jrpwar4hy7p" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/6.png" id="12_7jnhw"]
@@ -13,9 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://bqbd4mr86rhti" path="res://entities/interactables/level_changer.tscn" id="14_gbvnf"]
 [ext_resource type="Texture2D" uid="uid://cogx4bbsqsqr" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/10.png" id="14_ydloy"]
 [ext_resource type="Texture2D" uid="uid://dt8gc6g5giurx" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/12.png" id="15_3b402"]
+[ext_resource type="PackedScene" uid="uid://dxy15nkc8v5xa" path="res://entities/interactables/broken_part.tscn" id="16_775e0"]
 [ext_resource type="Texture2D" uid="uid://bkjjmyqxpwgng" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Trees/2.png" id="16_u8b2a"]
-[ext_resource type="PackedScene" uid="uid://toqia5r5q5tx" path="res://entities/interactables/start_timeline.tscn" id="17_orbd3"]
+[ext_resource type="Texture2D" uid="uid://bf4wix23usii5" path="res://assets/wheel.png" id="17_bxsl8"]
 [ext_resource type="Texture2D" uid="uid://dxiie0w7x8vn0" path="res://assets/AbandonedCity_Assets_Glerf/StopSign_Flowers_Moss.png" id="17_vdew4"]
+[ext_resource type="Resource" path="res://dialogs/timelines/abilities/SpeedFound.dtl" id="18_2s4pw"]
+[ext_resource type="AudioStream" uid="uid://bmits61vg6mnl" path="res://assets/music/i-have-no-regrets-in-my-life-274012.mp3" id="19_gcmgj"]
 [ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="19_mx3tj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfods"]
@@ -61,7 +63,7 @@ _data = {
 "platforms": SubResource("Animation_d833u")
 }
 
-[node name="Chapter0" type="Node2D"]
+[node name="Chapter1" type="Node2D"]
 
 [node name="DeadZone" parent="." instance=ExtResource("19_mx3tj")]
 
@@ -132,10 +134,6 @@ libraries = {
 }
 autoplay = "platforms"
 
-[node name="StartTimeline" parent="." instance=ExtResource("17_orbd3")]
-position = Vector2(850, 145)
-timeline = ExtResource("11_edk58")
-
 [node name="Props" type="Node" parent="."]
 
 [node name="6" type="Sprite2D" parent="Props"]
@@ -163,3 +161,14 @@ texture = ExtResource("16_u8b2a")
 [node name="StopSignFlowersMoss" type="Sprite2D" parent="Props"]
 position = Vector2(677, 134)
 texture = ExtResource("17_vdew4")
+
+[node name="BrokenPart" parent="." instance=ExtResource("16_775e0")]
+position = Vector2(852, 146)
+title = "Wheel"
+texture = ExtResource("17_bxsl8")
+timeline = ExtResource("18_2s4pw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_gcmgj")
+autoplay = true
+bus = &"Music"

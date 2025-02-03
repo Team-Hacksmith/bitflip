@@ -27,6 +27,7 @@ Bus="*res://scripts/globals/bus.gd"
 
 directories/dch_directory={
 "Cat": "res://dialogs/characters/Cat.dch",
+"Human1": "res://dialogs/characters/Human1.dch",
 "roomba": "res://dialogs/characters/roomba.dch"
 }
 directories/dtl_directory={
