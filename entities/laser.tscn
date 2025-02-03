@@ -109,9 +109,9 @@ points = PackedVector2Array(-88, 0, 88, 0)
 width = 13.065
 texture_mode = 2
 script = ExtResource("1_7a5mm")
-is_on = true
 
 [node name="DeadZone" parent="." instance=ExtResource("3_iu28u")]
+disabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

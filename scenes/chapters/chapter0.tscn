@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cfsiyu56shvuj"]
+[gd_scene load_steps=27 format=4 uid="uid://cfsiyu56shvuj"]
 
 [ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="1_1rdpy"]
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="1_6q1re"]
@@ -20,6 +20,7 @@
 [ext_resource type="Resource" path="res://dialogs/timelines/abilities/JumpFound.dtl" id="17_nxh8p"]
 [ext_resource type="Texture2D" uid="uid://cryhymyn2ye1g" path="res://assets/gun.png" id="18_318lr"]
 [ext_resource type="Resource" path="res://dialogs/timelines/abilities/GunFound.dtl" id="19_p1yi1"]
+[ext_resource type="PackedScene" uid="uid://bewj4wafjf3eh" path="res://entities/interactables/moveable_box.tscn" id="21_3xmpj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfods"]
 size = Vector2(304, 174)
@@ -103,7 +104,7 @@ position = Vector2(513, 160)
 shape = SubResource("RectangleShape2D_ii1w2")
 
 [node name="Door" parent="." instance=ExtResource("7_dyjvg")]
-position = Vector2(552, 160)
+position = Vector2(304, 160)
 
 [node name="InteractableBtn" parent="." node_paths=PackedStringArray("trigger_object") instance=ExtResource("8_5psj6")]
 position = Vector2(408, 152)
@@ -115,6 +116,7 @@ position = Vector2(252, 94)
 points = PackedVector2Array(92, -94, 92, 66)
 node_a = NodePath("LaserDevice")
 node_b = NodePath("LaserDevice2")
+is_on = true
 on_time = 2.0
 off_time = 1.0
 keep_updating_laser_for_debug = true
@@ -159,3 +161,6 @@ title = "Gun"
 part = 2
 texture = ExtResource("18_318lr")
 timeline = ExtResource("19_p1yi1")
+
+[node name="MoveableBox" parent="." instance=ExtResource("21_3xmpj")]
+position = Vector2(256, 152)

@@ -145,6 +145,7 @@ interact={
 2d_physics/layer_3="cat"
 2d_physics/layer_4="moveables"
 2d_physics/layer_5="bullets"
+2d_physics/layer_6="gates"
 2d_physics/layer_8="universal_interactables"
 
 [rendering]
