@@ -14,5 +14,5 @@ func shoot(speed: float):
 	tween.finished.connect(queue_free)  # Remove bullet when done
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	queue_free()

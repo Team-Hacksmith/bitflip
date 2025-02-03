@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var max_fall_speed: float = 1000.0
 @export var friction: float = 0.9
 
-func _physics_process(delta):
+func _physics_process(_delta: float) -> void:
 	# Apply gravity
 	if !is_on_floor():
 		velocity.y += gravity

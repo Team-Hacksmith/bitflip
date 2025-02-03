@@ -5,9 +5,6 @@ extends Control
 @onready var container = $ColorRect/CenterContainer
 const TYPING_LABEL = preload("res://gui/typing_label.tscn")
 
-func show_text(text: String):
-	pass
-
 func _ready():
 	for t in text_array:
 		var labl = TYPING_LABEL.instantiate()

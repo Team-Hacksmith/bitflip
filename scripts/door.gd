@@ -26,8 +26,8 @@ var bodies_stack: Array[Node2D] = []
 func _ready() -> void:
 	_on_state_changed(state)
 	
-func _on_state_changed(state: DoorState):
-	match state:
+func _on_state_changed(new_state: DoorState):
+	match new_state:
 		DoorState.OPEN:
 			sprite_2d.frame = 0
 			door_collision_shape_2d.set_deferred("disabled", true)
@@ -63,8 +63,8 @@ func _on_close_timer_timeout() -> void:
 		return
 	state = DoorState.CLOSED
 
-func trigger_with_btn(state: String):
-	if state == "pressed":
+func trigger_with_btn(curr_state: String):
+	if curr_state == "pressed":
 		open()
-	elif state == "released":
+	elif curr_state == "released":
 		close()

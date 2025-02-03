@@ -5,7 +5,7 @@ signal damaged(amt: float)
 signal healed(amt: float)
 signal dead
 
-@export var health : float = 100:
+@export var health: float = 100:
 	set(new):
 		if new > health:
 			healed.emit(new - health)
@@ -24,9 +24,9 @@ signal dead
 
 #@export var abilities: Abilities = preload("res://resources/default_player_abilities.tres")
 
-func add_part(part: Global.BrokenParts, run_timeline: bool = true):
+func add_part(part: Global.BrokenParts):
 	if part in parts_obtained:
-		return 
+		return
 	parts_obtained.push_back(part)
 		#match part:
 			#Global.BrokenParts.WHEEL:

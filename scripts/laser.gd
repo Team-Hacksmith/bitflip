@@ -75,7 +75,7 @@ func _setup_collision():
 		new_shape.shape = rect
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		if keep_updating_laser_for_debug:
 			_update_laser()

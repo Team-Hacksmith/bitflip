@@ -25,8 +25,8 @@ func _ready() -> void:
 		timer.stop()
 
 
-func _on_state_change(state: SpikeState):
-	match state:
+func _on_state_change(new_state: SpikeState):
+	match new_state:
 		SpikeState.HIDDEN:
 			sprite.play_backwards("default")
 			$DeadZone.disabled = true

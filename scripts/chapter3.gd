@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
-	Global.player_stats.add_part(0, false) # speed
-	Global.player_stats.add_part(1, false) # jump
-	#Global.player_stats.add_part(2, false) # gun
+	Global.player_stats.add_part(Global.BrokenParts.WHEEL)
+	Global.player_stats.add_part(Global.BrokenParts.SPRING)
+	# Global.player_stats.add_part(Global.BrokenParts.GUN)
 	Global.player.apply_abilities()

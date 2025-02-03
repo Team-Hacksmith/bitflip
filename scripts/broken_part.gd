@@ -15,7 +15,7 @@ func _ready() -> void:
 func _on_texture_changed(tex: Texture2D):
 	$Sprite2D.texture = tex
 
-func _on_interactable_interact(with: Node2D) -> void:
+func _on_interactable_interact(_with: Node2D) -> void:
 	#print(Global.player_stats.abilities.speed)
 	if timeline:
 		Dialogic.start(timeline)

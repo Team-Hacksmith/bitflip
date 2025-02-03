@@ -8,5 +8,5 @@ extends Node2D
 func _ready() -> void:
 	interactable.only_once = only_once
 
-func _on_interactable_interact(with: Node2D) -> void:
+func _on_interactable_interact(_with: Node2D) -> void:
 	Dialogic.start(timeline)
