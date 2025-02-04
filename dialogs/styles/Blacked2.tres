@@ -36,8 +36,8 @@ overrides = {}
 script = ExtResource("1_v4706")
 scene = ExtResource("5_dc3yv")
 overrides = {
-"box_animation_in": "1",
-"box_animation_out": "1",
+"box_animation_in": "0",
+"box_animation_out": "0",
 "box_margin_bottom": "0.0",
 "box_size": "Vector2(576, 324)",
 "name_label_alignment": "1",

@@ -190,7 +190,8 @@ func set_visuals(show: bool):
 		sprite.show()
 		$CollisionShape2D.set_deferred("disabled", false)
 		$CollisionShape2D2.set_deferred("disabled", false)
-		$PlayerGun.show()
+		if player_gun.can_shoot:
+			$PlayerGun.show()
 		$Antenna.show()
 	else:
 		sprite.hide()

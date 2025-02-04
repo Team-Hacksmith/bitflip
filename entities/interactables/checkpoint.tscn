@@ -4,12 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://43v4ip6mk6yu" path="res://assets/free-exclusion-zone-tileset-pixel-art/3 Objects/Other/Pointer1.png" id="2_vdwgg"]
 [ext_resource type="PackedScene" uid="uid://ld07dmcaibnu" path="res://entities/components/interactable.tscn" id="3_rhnh6"]
 
-[node name="Checkpoint" type="Node2D"]
-script = ExtResource("1_llsly")
-
-[node name="Pointer1" type="Sprite2D" parent="."]
-position = Vector2(0, -21)
+[node name="Checkpoint" type="Sprite2D"]
 texture = ExtResource("2_vdwgg")
+offset = Vector2(0, -21)
+script = ExtResource("1_llsly")
 
 [node name="Interactable" parent="." instance=ExtResource("3_rhnh6")]
 position = Vector2(0, -32)
