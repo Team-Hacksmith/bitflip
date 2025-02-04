@@ -1,6 +1,8 @@
+join Human1 leftmost [extra_data="set Face/Angry"]
+join roomba (03) left
 Human1: We don't have time—just do it!
 Human1: It’s not responding…"
-join roomba leftmost
+join Cat (idle_side) rightmost [mirrored="true"]
 Cat: *MrrrOW?!*
 roomba: SYSTEM LOG\: FORCE SHUTDOWN INITIATED. PROCESSING...
 Human1: ..shouldn't have let it—

@@ -10,3 +10,4 @@ do Global.kill_cat()
 roomba: I didn’t want this. I didn’t mean… to kill you.
 roomba: No matter what... I am broken. Forever.
 do Global.game_end()
+[end_timeline]
