@@ -3,7 +3,7 @@
 join Cat (idle_lick) rightmost [mirrored="true"]
 Cat (anger): *Slurpp* *Purr*
 leave Cat [mirrored="true"]
-join roomba left [animation="Bounce In"]
+join roomba leftmost [animation="Bounce In"]
 roomba: *beep* *boop*
 leave roomba [animation="Bounce In"]
 join Cat (idle_itch) rightmost [mirrored="true"]

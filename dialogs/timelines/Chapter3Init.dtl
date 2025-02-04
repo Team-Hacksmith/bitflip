@@ -1,9 +1,12 @@
+join Human1 leftmost [extra_data="set Face/Neutral Torso/LabCoat Hair/Messy"]
 Human1: Alright, let’s see how high you can go!
 Human1: It’s learning fast. Look—it saw the cat do it, and now it wants to try!
-join roomba leftmost
-roomba: Me Roomba… jumps?
+join roomba rightmost [animation="Bounce In"]
+roomba (03): Me Roomba… jumps?
 Human1: See? It adapts. It observes, and then it—
 Human1: It’s not just copying… it’s thinking.
+leave Human1 [length="1.0" wait="true"]
+update roomba leftmost [wait="true" move_time="1.0"]
 join Cat rightmost
 Cat: *MrrrOW!*
 leave Cat

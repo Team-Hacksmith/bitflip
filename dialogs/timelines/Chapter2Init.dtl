@@ -1,9 +1,12 @@
+join Human1 leftmost [extra_data="set Face/Neutral"]
+join roomba (02) left
 Human1: Alright, little guy, let’s see what you’ve got!
+join Cat rightmost
 Cat: *Prrrt!* *Mew!*
 roomba: Me Roomba… was here before?
+update Human1 [extra_data="set Face/Mean"]
 Human1: Look at it go! I swear, it’s obsessed with that cat.
 Human1: Guess you like making friends, huh?
-join roomba leftmost
 roomba: Me Roomba… saw something? Me Roomba… had friends?
 leave roomba
 [signal]

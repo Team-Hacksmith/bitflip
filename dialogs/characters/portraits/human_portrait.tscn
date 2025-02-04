@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://bc34v8qnvuphw"]
+
+[ext_resource type="Script" path="res://dialogs/characters/portraits/custom_layered_portrait.gd" id="1_uubi5"]
+[ext_resource type="Texture2D" uid="uid://cmaodnw7ylwts" path="res://assets/human/human_base.png" id="2_imdej"]
+[ext_resource type="Texture2D" uid="uid://c6gwv7mhixhcc" path="res://assets/human_sprites/human_face_neutral.png" id="3_j6o0r"]
+[ext_resource type="Texture2D" uid="uid://dbxjf4v23xpan" path="res://assets/human_sprites/human_face_tired.png" id="4_pq4fx"]
+[ext_resource type="Texture2D" uid="uid://ctliqp577ss04" path="res://assets/human_sprites/human_face_angry.png" id="5_n527c"]
+[ext_resource type="Texture2D" uid="uid://bevukst2o4kns" path="res://assets/human_sprites/human_face_mean.png" id="6_cfx6f"]
+[ext_resource type="Texture2D" uid="uid://begh1o434r8mu" path="res://assets/human_sprites/human_torso_lab_coat.png" id="6_e3tex"]
+[ext_resource type="Texture2D" uid="uid://bolba3c5ma1xi" path="res://assets/human_sprites/human_hair_messy.png" id="7_qblhq"]
+
+[node name="LayeredPortrait" type="CanvasGroup"]
+script = ExtResource("1_uubi5")
+
+[node name="Layer1" type="Sprite2D" parent="."]
+texture = ExtResource("2_imdej")
+
+[node name="Face" type="Node2D" parent="."]
+position = Vector2(18, -8)
+
+[node name="Neutral" type="Sprite2D" parent="Face"]
+position = Vector2(-23, -8)
+texture = ExtResource("3_j6o0r")
+centered = false
+
+[node name="Tired" type="Sprite2D" parent="Face"]
+position = Vector2(-23, -8)
+texture = ExtResource("4_pq4fx")
+centered = false
+
+[node name="Angry" type="Sprite2D" parent="Face"]
+position = Vector2(-23, -8)
+texture = ExtResource("5_n527c")
+centered = false
+
+[node name="Mean" type="Sprite2D" parent="Face"]
+position = Vector2(-23, -8)
+texture = ExtResource("6_cfx6f")
+centered = false
+
+[node name="Torso" type="Node2D" parent="."]
+position = Vector2(18, -8)
+
+[node name="LabCoat" type="Sprite2D" parent="Torso"]
+position = Vector2(-18, 9)
+texture = ExtResource("6_e3tex")
+
+[node name="Hair" type="Node2D" parent="."]
+
+[node name="Messy" type="Sprite2D" parent="Hair"]
+position = Vector2(-1, -16)
+texture = ExtResource("7_qblhq")
