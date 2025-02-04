@@ -646,8 +646,10 @@ rotation = 3.14159
 [node name="Timelines" type="Node" parent="."]
 
 [node name="StartTimeline" parent="Timelines" instance=ExtResource("13_ufgmh")]
-position = Vector2(2197, 182)
+position = Vector2(2200, 160)
 timeline = ExtResource("37_lqmfd")
+only_once = true
+needs_e = false
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("38_dscax")

@@ -18,6 +18,7 @@ var jump_force: int = 0
 @onready var tire_smoke_right: CPUParticles2D = $TireSmoke2
 @onready var dead_particles: CPUParticles2D = %DeadParticles
 @onready var player_gun = %PlayerGun
+@onready var after_dead_timer: Timer = $AfterDeadTimer
 
 var can_coyote_jump = false
 var jump_buffered = false
@@ -183,13 +184,32 @@ func die():
 	print("DED")
 	stats.health = 0
 
+func set_visuals(show: bool):
+	print(show, "SHOw")
+	if show:
+		sprite.show()
+		$CollisionShape2D.set_deferred("disabled", false)
+		$CollisionShape2D2.set_deferred("disabled", false)
+		$PlayerGun.show()
+		$Antenna.show()
+	else:
+		sprite.hide()
+		$CollisionShape2D.set_deferred("disabled", true)
+		$CollisionShape2D2.set_deferred("disabled", true)
+		$PlayerGun.hide()
+		$Antenna.hide()
+
 func _on_player_dead():
 	dead_particles.emitting = true
+	set_visuals(false)
+	after_dead_timer.start(1.0)
+	
+
+func _on_after_dead_timer_timeout() -> void:
 	if Global.last_checkpoint:
+		set_visuals(true)
 		global_position = Global.last_checkpoint
 		stats.health = 100
 		return
-	sprite.queue_free()
-	$CollisionShape2D.queue_free()
-	$CollisionShape2D2.queue_free()
-	$PlayerGun.queue_free()
+	else:
+		Global.game_controller.change_gui_scene("res://gui/game_over.tscn")

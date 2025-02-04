@@ -125,6 +125,9 @@ one_shot = true
 wait_time = 0.15
 one_shot = true
 
+[node name="AfterDeadTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_hebc6")
@@ -171,3 +174,4 @@ bullet_scene = ExtResource("9_xvi2y")
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="timeout" from="JumpBufferTimer" to="." method="_on_jump_buffer_timer_timeout"]
 [connection signal="timeout" from="JumpHeightTimer" to="." method="_on_jump_height_timer_timeout"]
+[connection signal="timeout" from="AfterDeadTimer" to="." method="_on_after_dead_timer_timeout"]

@@ -12,4 +12,5 @@ leave roomba
 join Cat rightmost
 Cat: *Meow*
 leave Cat
+do Global.set_last_checkpoint()
 [end_timeline]

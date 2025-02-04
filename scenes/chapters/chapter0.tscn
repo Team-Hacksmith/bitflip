@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cfsiyu56shvuj"]
+[gd_scene load_steps=30 format=4 uid="uid://cfsiyu56shvuj"]
 
 [ext_resource type="PackedScene" uid="uid://c41pgp6oiwr5h" path="res://entities/interactables/dead_zone.tscn" id="1_1rdpy"]
 [ext_resource type="PackedScene" uid="uid://cqyk3v8ow2w4b" path="res://entities/day_parallax_background.tscn" id="1_6q1re"]
@@ -22,6 +22,8 @@
 [ext_resource type="Resource" path="res://dialogs/timelines/abilities/GunFound.dtl" id="19_p1yi1"]
 [ext_resource type="PackedScene" uid="uid://bewj4wafjf3eh" path="res://entities/interactables/moveable_box.tscn" id="21_3xmpj"]
 [ext_resource type="PackedScene" uid="uid://dks3wvjd2ipoq" path="res://entities/interactables/checkpoint.tscn" id="22_sgtnc"]
+[ext_resource type="PackedScene" uid="uid://toqia5r5q5tx" path="res://entities/interactables/start_timeline.tscn" id="23_k0kbo"]
+[ext_resource type="Resource" path="res://dialogs/timelines/Chapter3Mid.dtl" id="24_bc4kf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfods"]
 size = Vector2(304, 174)
@@ -168,3 +170,9 @@ position = Vector2(256, 152)
 
 [node name="Checkpoint" parent="." instance=ExtResource("22_sgtnc")]
 position = Vector2(48, 160)
+
+[node name="StartTimeline" parent="." instance=ExtResource("23_k0kbo")]
+position = Vector2(176, 128)
+timeline = ExtResource("24_bc4kf")
+only_once = true
+needs_e = false

@@ -88,6 +88,7 @@ points = PackedVector2Array(794, 193, 794, 361)
 default_color = Color(0.356863, 0.92549, 0.945098, 1)
 node_a = NodePath("LaserDevice")
 node_b = NodePath("LaserDevice2")
+is_on = true
 keep_updating_laser_for_debug = true
 
 [node name="LaserDevice" parent="Laser" instance=ExtResource("12_n5ig4")]

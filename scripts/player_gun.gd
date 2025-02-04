@@ -15,9 +15,9 @@ extends Node2D
 var can_shoot = true
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
-		#shoot()
-		pass
+	if event.is_action_pressed("fire"):
+		shoot()
+		#pass
 
 func shoot():
 	if not can_shoot: return

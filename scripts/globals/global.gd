@@ -18,3 +18,6 @@ func kill_cat():
 	
 func game_end():
 	game_controller.change_gui_scene("res://gui/splash_screen_manager.tscn")
+
+func set_last_checkpoint():
+	last_checkpoint = player.global_position

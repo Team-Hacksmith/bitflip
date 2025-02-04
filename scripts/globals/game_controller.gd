@@ -22,6 +22,8 @@ func get_chapter_path(chapter_num: int):
 	return chapters_folder + chapter_prefix + str(chapter_num) + ".tscn"
 
 func change_to_chapter_safe(chapter_num: int):
+	Global.last_checkpoint = Vector2.ZERO		# Reset the checkpoint
+	print("Last Checkpoint: ", Global.last_checkpoint)
 	curr_chapter = clampi(chapter_num, 0, max_chapters)
 	var next_chapter_path = get_chapter_path(curr_chapter)
 	await change_scene(next_chapter_path)
