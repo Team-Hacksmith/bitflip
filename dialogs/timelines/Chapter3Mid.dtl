@@ -1,6 +1,6 @@
+do Global.game_controller.start_glitch()
 join Human1 leftmost [extra_data="set Face/Angry"]
 join roomba (03) left
-[background arg="res://icon.svg" fade="0.0"]
 Human1: We don't have time—just do it!
 Human1: It’s not responding…"
 join Cat (idle_side) rightmost [mirrored="true"]
@@ -9,9 +9,11 @@ roomba: SYSTEM LOG\: FORCE SHUTDOWN INITIATED. PROCESSING...
 Human1: ..shouldn't have let it—
 join Cat rightmost
 Cat: *Prrrt*
+do Global.game_controller.stop_glitch()
+leave Human1
 leave Cat
-roomba: Me Roomba… was turned off? Why?
-leave roomba
+update roomba leftmost [move_time="0.5"]
+roomba: Me... Roomba… was turned off? Why?
 join Cat rightmost
 Cat: *Meow*
 leave Cat

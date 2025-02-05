@@ -8,6 +8,8 @@ extends Node
 @onready var world: Node2D = %World
 @onready var gui: Control = %GUI
 @onready var transition_controller: TransitionController = %TransitionController
+@onready var ap: AnimationPlayer = $AnimationPlayer
+
 
 var curr_scene: Node2D
 var curr_gui_scene: Control
@@ -77,3 +79,13 @@ func _clear_scene(delete: bool = true, keep_running: bool = false) -> void:
 		#if curr_scene and curr_scene.get_parent() == world:
 			#world.remove_child(curr_scene)
 		pass
+
+func start_glitch():
+	print("STARTING GLITCH")
+	ap.play("start_glitch")
+	await ap.animation_finished
+	
+func stop_glitch():
+	print("STOPPING GLITCH")
+	ap.play_backwards("start_glitch")
+	await ap.animation_finished
