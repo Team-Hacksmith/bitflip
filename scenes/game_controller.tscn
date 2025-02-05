@@ -221,7 +221,6 @@ mouse_filter = 2
 
 [node name="SplashScreenManager" parent="UILayer/GUI" instance=ExtResource("2_ksg8s")]
 layout_mode = 1
-start_chapter = 2
 
 [node name="TransitionController" parent="UILayer" instance=ExtResource("3_m24m2")]
 unique_name_in_owner = true
@@ -236,6 +235,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_pahnx")
+stretch_mode = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
