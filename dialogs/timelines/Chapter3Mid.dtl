@@ -1,5 +1,6 @@
 join Human1 leftmost [extra_data="set Face/Angry"]
 join roomba (03) left
+[background arg="res://icon.svg" fade="0.0"]
 Human1: We don't have time—just do it!
 Human1: It’s not responding…"
 join Cat (idle_side) rightmost [mirrored="true"]

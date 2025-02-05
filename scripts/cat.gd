@@ -6,7 +6,10 @@ extends CharacterBody2D
 @onready var transportation_particles: CPUParticles2D = $TransportationParticles
 
 @export var auto_move_time := 30.0 #seconds
-@export var speed := 250
+@export var speed := 320
+@export var jump_force := 400
+@export var max_speed := 500
+var default_speed := speed
 @export var gravity := 30
 @export var gravity_dir := Vector2.DOWN
 
@@ -56,6 +59,7 @@ func _physics_process(_delta: float) -> void:
 func move_to_next_marker():
 	if is_at_last or not is_fleeing:
 		return
+	speed = default_speed
 	transportation_particles.emitting = true
 	auto_move_timer.stop()
 	sprite.hide()
@@ -73,6 +77,8 @@ func move_to_next_marker():
 
 func _on_spook_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		if is_fleeing:
+			speed = max_speed
 		auto_move_timer.start(auto_move_time)
 		is_fleeing = true
 
