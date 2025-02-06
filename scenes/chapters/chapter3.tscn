@@ -382,10 +382,10 @@ tile_map_data = PackedByteArray("AAAKAAkAAAABAAEAAAAKAAgAAAACAAEAAAAKAAcAAAABAAE
 tile_set = ExtResource("3_trw62")
 
 [node name="Player" parent="." instance=ExtResource("4_5yjsx")]
-position = Vector2(74, 178)
+position = Vector2(80, 176)
 
 [node name="Cat" parent="." node_paths=PackedStringArray("position_markers_parent") instance=ExtResource("5_r34in")]
-position = Vector2(193, 181)
+position = Vector2(192, 176)
 position_markers_parent = NodePath("../CatMarkers")
 
 [node name="CatMarkers" type="Node2D" parent="."]
@@ -421,7 +421,7 @@ position = Vector2(-277, 652)
 shape = SubResource("RectangleShape2D_qr46d")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DeadZone"]
-position = Vector2(748, 621)
+position = Vector2(720, 632)
 shape = SubResource("RectangleShape2D_qr46d")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="DeadZone"]
@@ -442,6 +442,7 @@ points = PackedVector2Array(884, 286, 1050, 287)
 default_color = Color(0.356863, 0.92549, 0.945098, 1)
 node_a = NodePath("LaserDevice")
 node_b = NodePath("LaserDevice2")
+is_on = true
 on_time = 4.0
 off_time = 4.0
 keep_updating_laser_for_debug = true
@@ -646,7 +647,7 @@ rotation = 3.14159
 [node name="Timelines" type="Node" parent="."]
 
 [node name="StartTimeline" parent="Timelines" instance=ExtResource("13_ufgmh")]
-position = Vector2(2200, 160)
+position = Vector2(3432, -64)
 timeline = ExtResource("37_lqmfd")
 only_once = true
 needs_e = false
@@ -661,6 +662,7 @@ timeline = ExtResource("42_21tls")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("38_dscax")
 autoplay = true
+max_distance = 20000.0
 bus = &"Music"
 
 [node name="StartTimeline" parent="." instance=ExtResource("13_ufgmh")]

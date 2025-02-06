@@ -45,6 +45,7 @@ script = ExtResource("1_b48wx")
 
 [node name="Interactable" parent="." instance=ExtResource("2_5q430")]
 only_once = true
+needs_e = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -9,12 +9,17 @@ extends Node
 @onready var gui: Control = %GUI
 @onready var transition_controller: TransitionController = %TransitionController
 @onready var ap: AnimationPlayer = $AnimationPlayer
+@onready var death_counter_label: Label = %DeathCounterLabel
 
 
 var curr_scene: Node2D
 var curr_gui_scene: Control
 
 var curr_chapter: int = 0
+var death_counter: int = 0:
+	set(new):
+		death_counter = new
+		death_counter_label.text = str(death_counter)
 
 func _ready():
 	Global.game_controller = self

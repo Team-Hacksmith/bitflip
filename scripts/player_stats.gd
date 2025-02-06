@@ -13,6 +13,7 @@ signal dead
 			damaged.emit(health - new)
 		health = clamp(new, 0, 100)
 		if health == 0:
+			Global.game_controller.death_counter += 1
 			dead.emit()
 
 @export var parts_obtained: Array[Global.BrokenParts] = []

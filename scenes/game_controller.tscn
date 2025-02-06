@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://eqs53nnssio7"]
+[gd_scene load_steps=14 format=3 uid="uid://eqs53nnssio7"]
 
 [ext_resource type="Script" path="res://scripts/globals/game_controller.gd" id="1_jxpow"]
 [ext_resource type="Texture2D" uid="uid://bdt461fp6h1e6" path="res://assets/restart.png" id="2_65mb3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/hud.gd" id="2_qvo47"]
 [ext_resource type="PackedScene" uid="uid://cr0jdtuxo03ae" path="res://gui/transition_controller.tscn" id="3_m24m2"]
 [ext_resource type="Texture2D" uid="uid://cohp8sk5ftium" path="res://assets/restar_pressedt.png" id="3_y7pxh"]
+[ext_resource type="Texture2D" uid="uid://caocirkrhntxs" path="res://assets/skull.png" id="5_xe6d6"]
 [ext_resource type="Shader" path="res://shaders/vhs_glitch.gdshader" id="7_kmb08"]
 [ext_resource type="Texture2D" uid="uid://d0juk4oil3a0b" path="res://assets/free-exclusion-zone-tileset-pixel-art/2 Background/Day/1.png" id="8_pahnx"]
 
@@ -18,6 +19,81 @@ shader_parameter/offsetIntensity = 3.25988e-09
 shader_parameter/colorOffsetIntensity = 0.0
 shader_parameter/brightnessFactor = 1.0
 shader_parameter/grayscaleFactor = 0.0
+
+[sub_resource type="Animation" id="Animation_7my6k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UILayer/GlitchEffect:material:shader_parameter/range")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UILayer/GlitchEffect:material:shader_parameter/noiseIntensity")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.65814e-09]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UILayer/GlitchEffect:material:shader_parameter/offsetIntensity")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.25988e-09]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UILayer/GlitchEffect:material:shader_parameter/colorOffsetIntensity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("UILayer/GlitchEffect:material:shader_parameter/brightnessFactor")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("UILayer/GlitchEffect:material:shader_parameter/grayscaleFactor")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_ymdk3"]
 resource_name = "start_glitch"
@@ -95,81 +171,6 @@ tracks/5/keys = {
 "values": [0.0, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_7my6k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("UILayer/GlitchEffect:material:shader_parameter/range")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("UILayer/GlitchEffect:material:shader_parameter/noiseIntensity")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [4.65814e-09]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("UILayer/GlitchEffect:material:shader_parameter/offsetIntensity")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [3.25988e-09]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("UILayer/GlitchEffect:material:shader_parameter/colorOffsetIntensity")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("UILayer/GlitchEffect:material:shader_parameter/brightnessFactor")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("UILayer/GlitchEffect:material:shader_parameter/grayscaleFactor")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yu62u"]
 _data = {
 "RESET": SubResource("Animation_7my6k"),
@@ -200,14 +201,37 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -48.0
+offset_left = -40.0
 offset_top = 8.0
 offset_right = -8.0
-offset_bottom = 48.0
+offset_bottom = 40.0
 grow_horizontal = 0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_65mb3")
 texture_pressed = ExtResource("3_y7pxh")
+
+[node name="DeathCounter" type="MarginContainer" parent="UILayer/HUD"]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 48.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/HUD/DeathCounter"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/HUD/DeathCounter/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_xe6d6")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="DeathCounterLabel" type="Label" parent="UILayer/HUD/DeathCounter/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0 Deaths"
 
 [node name="GUI" type="Control" parent="UILayer"]
 unique_name_in_owner = true
@@ -221,6 +245,7 @@ mouse_filter = 2
 
 [node name="SplashScreenManager" parent="UILayer/GUI" instance=ExtResource("2_ksg8s")]
 layout_mode = 1
+start_chapter = 3
 
 [node name="TransitionController" parent="UILayer" instance=ExtResource("3_m24m2")]
 unique_name_in_owner = true
@@ -234,6 +259,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("8_pahnx")
 stretch_mode = 6
 

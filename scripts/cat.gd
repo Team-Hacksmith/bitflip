@@ -24,6 +24,7 @@ var current_index = 0
 
 func _ready() -> void:
 	assert(position_markers_parent)
+	Global.cat = self
 	for marker: Marker2D in position_markers_parent.get_children():
 		position_markers.push_back(marker.global_position)
 
