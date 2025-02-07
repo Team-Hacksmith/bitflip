@@ -24,3 +24,4 @@ func game_end():
 
 func set_last_checkpoint():
 	last_checkpoint = player.global_position
+	last_checkpoint.y -= 64
