@@ -31,6 +31,7 @@ func shoot():
 	
 	smoke.play("default")
 	_apply_recoil()
+	Global.player.player_cam.apply_shake(5)
 	Global.game_controller.curr_scene.add_child(bullet)  # Add bullet to the scene
 
 func _apply_recoil():

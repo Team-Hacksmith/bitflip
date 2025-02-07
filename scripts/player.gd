@@ -19,6 +19,7 @@ var jump_force: int = 0
 @onready var dead_particles: CPUParticles2D = %DeadParticles
 @onready var player_gun = %PlayerGun
 @onready var after_dead_timer: Timer = $AfterDeadTimer
+@onready var player_cam: PlayerCam = $PlayerCam
 
 var can_coyote_jump = false
 var jump_buffered = false
@@ -203,6 +204,7 @@ func set_visuals(show: bool):
 func _on_player_dead():
 	dead_particles.emitting = true
 	set_visuals(false)
+	player_cam.apply_shake()
 	after_dead_timer.start(1.0)
 	
 
