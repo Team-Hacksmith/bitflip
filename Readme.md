@@ -1,5 +1,5 @@
 # **BitFlip**  
-Link to game :- [https://imadi-arch.itch.io/bitflip](https://imadi-arch.itch.io/bitflip)
+Link to game :- [https://zkio.itch.io/bitflip](https://zkio.itch.io/bitflip)
 
 ## **Overview**  
 _In the distant future, few creatures remain._  
