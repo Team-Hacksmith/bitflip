@@ -41,7 +41,7 @@ BitFlip is a narrative-rich 2D platformer with minimal UI, immersive storytellin
 | Custom Physics Layers      | Enable interaction between selective game elements and logic zones         |
 | FSM-based AI               | Lightweight state machines manage cat behavior                   |
 | Signal-based Triggers      | Clean event-driven gameplay logic using Godot’s signal system              |
-| Optimized for 24hr Jam     | Built under tight time constraints without sacrificing quality             |
+| Optimized for 72hr Jam     | Built under tight time constraints without sacrificing quality             |
 
 ---
 
